@@ -200,7 +200,6 @@ a {
 
 .main_products_parent .main__left {
     min-width: 252px;
-    padding: 0 20px 0 30px;
     border-right: 1px solid var(--gray-light);
 }
 
@@ -209,45 +208,56 @@ a {
 }
 
 .main_filter {
-    padding: 0 0px 20px;
+    padding: 0;
 }
 
-.main_filter .filter__title {
+.main_filter .filter_card {
+    border-bottom: 1px solid var(--gray-light);
+    padding: 1rem 1.25rem 1rem 1.8rem;
+}
+
+.filter_card .filter_title_n_search_container {
+    margin-bottom: 1rem;
+}
+
+.filter_title_n_search_container .filter__title {
     font-size: var(--font-size-md);
     font-weight: 700;
-    margin-top: 20px;
     text-transform: uppercase;
 }
 
-.main_filter .filter__item {
-    margin-top: 10px;
-}
-
-.main_filter .filter__item__radio {
-    margin-top: 10px;
-}
-
-.main_filter .filter__item__radio input {
-    margin-right: 10px;
-}
-
-.main_filter .filter__item__checkbox {
-    margin-top: 10px;
+.filter_card .filter__item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
-.main_filter .filter__item__checkbox__count {
+.filter__item input, .filter__item label, .filter__item span {
+    cursor: pointer;
+}
+
+.filter__item .filter__item__radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.filter_card .filter__item__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.filter_card .filter__item__checkbox__count {
     font-size: 9px;
     color: var(--gray);
 }
 
-.main_filter .filter__item__more {
-    margin-top: 10px;
-}
-
-.main_filter .filter__item__more button {
+.filter_card .filter__item__more button {
     background: none;
     border: none;
     color: var(--red);
@@ -255,12 +265,14 @@ a {
     cursor: pointer;
 }
 
+/* === Main Product ===*/
+
 .main_product {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
 .product__card {
