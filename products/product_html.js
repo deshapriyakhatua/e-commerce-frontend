@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" data-n-g="">
-    <!--=============== Google Icon ===============-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
-    <title>products</title>
-</head>
-
-<body>
-    <div id="products_main_container">
+document.write(`
+    <section id="products_main_container">
         <div class="category_uri">
             <div class="category_uri__items">
                 <div class="category_uri__item">Home</div>
@@ -27,6 +15,10 @@
         </div>
         <div class="main_product_sort">
             <div id="title_filter">FILTERS</div>
+            <div class="filter__options_container">
+                <span id="filter_option_pre_text">Filters</span>
+                <span class="material-symbols-rounded filter_dropdown_arrow"> expand_more </span>
+            </div>
             <div class="sort__options_container">
                 <input id="selected_option" type="text" value="Recommended" disabled>
                 <span id="selected_option_pre_text">Sort By :</span>
@@ -43,7 +35,7 @@
             </div>
         </div>
         <div class="main_products_parent">
-            <div class="main__left">
+            <div class="main__left hide_filter_container">
                 <div class="main_filter">
 
                     <div class="filter_card">
@@ -605,7 +597,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
-</html>
+    </section>
+`);
