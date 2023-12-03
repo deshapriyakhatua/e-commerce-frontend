@@ -7,7 +7,7 @@ document.write(`
                         <i class="material-symbols-rounded navbar_toggle_close"> close </i>
                     </div>
                     <a href="#" class="navbar_logo">
-                        <span class="material-symbols-rounded"> eco </span> Earz
+                        <span class="material-symbols-rounded"> eco </span> E-Mart
                     </a>
                 </div>
 
@@ -330,7 +330,7 @@ document.write(`
                             <span class="navbar_profile_name">Profile</span>
                         </div>
                         <div id="navbar_account_dropdown" class="hide_dropdown">
-                            <a href="/Profile/profile.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
+                            <a href="/e-commerce-frontend/signin/index.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
                             <a href="/Profile/signup.html" class="dropList">Gift Cards</a>
                             <a href="#" class="dropList">Coupons</a>
                             <a href="#" class="dropList">Saved Address</a>

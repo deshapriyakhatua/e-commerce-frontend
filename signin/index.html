@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign In</title>
+
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Ubuntu, sans-serif;
+}
+
+body {
+	min-height: 100%;
+	background-color: #ffffff;
+	--theme-color: #616161;
+}
+
+h1 {
+	letter-spacing: -1px;
+}
+
+a {
+	color: var(--theme-color);
+	text-decoration: unset;
+}
+span {
+	display: block;
+	font-size: 20px;
+	line-height: 28px;
+	color: #1a1f36;
+}
+label {
+	margin-bottom: 10px;
+}
+.signin_container {
+    padding: 4rem 0 4rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.formbg-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.formbg {
+	margin: 0px auto;
+    padding: 2.5rem 3rem;
+	background: white;
+	border-radius: 4px;
+	box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12)
+		0px 3px 6px 0px;
+}
+#form-login {
+    margin-top: 2rem;
+}
+.field {
+    margin-bottom: 1rem;
+}
+.field input {
+	font-size: 16px;
+	line-height: 28px;
+	padding: 8px 16px;
+	width: 360px;
+	min-height: 44px;
+	border: unset;
+	border-radius: 4px;
+	outline-color: rgb(84 105 212/ 0.5);
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px
+		0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px
+		0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px
+		0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+.forgot_password_parent {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	align-items: center;
+}
+.reset-pass a, label {
+	font-size: 14px;
+	font-weight: 600;
+	display: block;
+}
+.reset-pass>a {
+	text-align: right;
+	margin-bottom: 10px;
+}
+#submit_button {
+    margin-top: 2rem;
+	background-color: var(--theme-color);
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+#status_text {
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 400;
+	color: red;
+}
+a.ssolink {
+	display: block;
+	text-align: center;
+	font-weight: 600;
+}
+.footer-link span {
+	font-size: 14px;
+	text-align: center;
+}
+
+</style>
+
+</head>
+<body>			
+    <div class="signin_container" >
+        <h1 class="signin_title">
+            <a href="" rel="">E-Mart</a>
+        </h1>
+        <div class="formbg-outer">
+            <div class="formbg">
+                <span class="formbg_title">Sign In to your account</span>
+                <form id="form-login" action="login" method="post">
+                    <div class="field">
+                        <label for="email">Email</label> 
+                        <input type="email"	name="email">
+                    </div>
+                    <div class="field">
+                        <div class="forgot_password_parent">
+                            <label for="password">Password</label>
+                            <div class="reset-pass">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                        <input type="password" name="password">
+                    </div>
+                    <div class="field">
+                        <input id="submit_button" type="submit" name="submit" value="Sign In">
+                    </div>
+                    <p id="status_text">error!</p>
+                    <div class="field">
+                        <a class="ssolink" href="#">Sign-In with Google</a>
+                    </div>
+                </form>
+            </div>
+            <div class="footer-link">
+                <span>Don't have an account? <a href="/e-commerce-frontend/signup/index.html">Sign up</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
