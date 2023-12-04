@@ -131,7 +131,7 @@ a.ssolink {
         <div class="formbg-outer">
             <div class="formbg">
                 <span class="formbg_title">Sign Up to your account</span>
-                <form id="form-login" action="login" method="post">
+                <form id="form-login">
                     <div class="field">
                         <label for="email">Email</label> 
                         <input type="email"	name="email">
@@ -145,10 +145,14 @@ a.ssolink {
                         </div>
                         <input type="password" name="password">
                     </div>
+					<div class="field">
+                        <label for="roles">Role</label> 
+                        <input type="text"	name="roles">
+                    </div>
                     <div class="field">
                         <input id="submit_button" type="submit" name="submit" value="Sign Up">
                     </div>
-                    <p id="status_text">error!</p>
+                    <p id="status_text"></p>
                     <div class="field">
                         <a class="ssolink" href="#">Sign-Up with Google</a>
                     </div>
@@ -160,5 +164,5 @@ a.ssolink {
         </div>
     </div>
 </body>
-
+<script src="signup.js"></script>
 </html>

@@ -330,7 +330,7 @@ document.write(`
                             <span class="navbar_profile_name">Profile</span>
                         </div>
                         <div id="navbar_account_dropdown" class="hide_dropdown">
-                            <a href="/e-commerce-frontend/signin/index.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
+                            <a href="/e-commerce-frontend/signin/signin.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
                             <a href="/Profile/signup.html" class="dropList">Gift Cards</a>
                             <a href="#" class="dropList">Coupons</a>
                             <a href="#" class="dropList">Saved Address</a>
