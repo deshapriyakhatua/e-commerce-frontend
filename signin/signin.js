@@ -1,6 +1,6 @@
 
 
-const apiUrl = 'http://localhost:8080/auth/signUp';
+const apiUrl = 'http://localhost:8080/auth/signIn';
 
 const contactForm = document.getElementById('form-login');
 const responseMessage = document.getElementById('status_text');
@@ -20,7 +20,7 @@ contactForm.addEventListener('submit', function (event) {
             return response.json();
         }
     ).then(data => {
-
+        
             if(data.error != undefined){
                 responseMessage.textContent = data.error;
             }else{

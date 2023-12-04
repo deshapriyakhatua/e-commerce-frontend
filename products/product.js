@@ -4,3 +4,5 @@ document.querySelector(".filter__options_container").addEventListener("click",()
     document.querySelector(".main__left").classList.toggle("show_filter_container");
     document.querySelector(".filter_dropdown_arrow").classList.toggle("rotate");
 });
+
+

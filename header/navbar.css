@@ -377,6 +377,10 @@ a {
   border: 1px solid burlywood;
   font-weight: bold;
 }
+#navbar_account_dropdown_account {
+  display: none;
+  font-weight: bold;
+}
 
 /*=============== responsive ===============*/
 
