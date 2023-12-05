@@ -1,6 +1,6 @@
 
 
-const apiUrl = 'http://localhost:8080/auth/signUp';
+const apiUrl = BACKEND_PRE_URL + '/auth/signUp';
 
 const contactForm = document.getElementById('form-login');
 const responseMessage = document.getElementById('status_text');
@@ -25,7 +25,7 @@ contactForm.addEventListener('submit', function (event) {
                 responseMessage.textContent = data.error;
             }else{
                 setCookie("jwtToken",data.jwtToken,1);
-                window.location.replace("http://127.0.0.1:5500/e-commerce-frontend/products/index.html");
+                window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/products/product.html");
             }
             console.log(data);
             

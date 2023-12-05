@@ -6,7 +6,7 @@ document.write(`
                         <span class="material-symbols-rounded navbar_toggle_menu"> menu </span>
                         <i class="material-symbols-rounded navbar_toggle_close"> close </i>
                     </div>
-                    <a href="#" class="navbar_logo">
+                    <a href="/e-commerce-frontend/home/home.html" class="navbar_logo">
                         <span class="material-symbols-rounded"> eco </span> E-Mart
                     </a>
                 </div>
@@ -25,7 +25,7 @@ document.write(`
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="#" class="dropdown__link">Washing Machines & Dryers</a>
+                                                <a href="/e-commerce-frontend/products/product.html" class="dropdown__link">Washing Machines & Dryers</a>
                                             </li>
                                             <li>
                                                 <a href="#" class="dropdown__link">Air Conditioner</a>

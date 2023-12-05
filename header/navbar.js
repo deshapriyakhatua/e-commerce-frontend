@@ -1,3 +1,5 @@
+
+
 /*=============== SHOW MENU ===============*/
 const navToggle = document.getElementById('navbar_toggle');
 const navMenu = document.getElementById('navbar_menu');
@@ -101,7 +103,7 @@ const jwtToken = getCookie("jwtToken");
 
 if(jwtToken.length != 0){
     console.log(jwtToken)
-    const apiUrl = 'http://localhost:8080/home/current_user';
+    const apiUrl = BACKEND_PRE_URL + '/home/current_user';
     const requestOptions = {
         method: 'GET',
         headers: {
