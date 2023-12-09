@@ -27,6 +27,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
   header {
+    --header-height: 5rem;
     --normal-font-size: .9rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
@@ -236,6 +237,7 @@ a {
 }
 
 #navbar_profile > .navbar_profile_child > .navbar_profile_child_title {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -254,37 +256,53 @@ a {
   font-weight: bold;
 }
 
-/* === navbar search dropdown === */
+/* === navbar search=== */
 
-#navbar_profile_search > #navbar_search_dropdown{
+.show_search_dropdown_button {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+.navbar_search_dropdown{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 2rem 1rem;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 101;
+  transition: all .5s;
+}
+.navbar_profile_child .visible_dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+.close_search_dropdown {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.149);
+}
+.main_nav_search_container {
+  position: relative;
+  margin: auto;
+  margin-top: var(--header-height);
+  width: 80%;
+  padding: 2rem 2rem 5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
   color: #696e79;
   box-shadow: 0 6px 8px hsla(220, 68%, 12%, 0.05);
   background-color: white;
-  transition: all .5s;
+  gap: 1rem;
 }
-
-.visible_dropdown {
-  visibility: visible;
-  opacity: 1;
-  top: 95%;
-}
-
-.hide_dropdown {
-  visibility: hidden;
-  opacity: 0;
-}
-
 #search_bar_input_container {
   width: 100%;
   background-color: #f5f5f6;
@@ -337,18 +355,64 @@ a {
   color: #000;
 }
 
-/* === Account Dropdown Menu ===  */
+/* ====== Wishlist ====== */
 
-#navbar_profile_account{
+.show_wishlist_dropdown_button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+/* ======= Cart ======= */
+
+.show_cart_dropdown_button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+/* === Account Dropdown Menu ===  */
+#navbar_profile_account {
   position: relative;
 }
 
-#navbar_profile_account > #navbar_account_dropdown{
-  height: 15rem;
-  padding: 2rem 1rem;
+.show_account_dropdown_button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.navbar_account_dropdown{
   position: absolute;
   top: 100%;
   right: -1rem;
+  height: 15rem;
+  width: 12rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s;
+}
+.close_account_dropdown {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.149);
+}
+.main_nav_account_container {
+  position: relative;
+  height: 100%;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -356,9 +420,7 @@ a {
   cursor: default;
   background-color: #fff;
   box-shadow: 0 6px 8px hsla(220, 68%, 12%, 0.05);
-  transition: all .5s;
 }
-
 .dropList{
   width: max-content;
   padding: .31rem 1.25rem;
@@ -400,6 +462,10 @@ a {
   #navbar_profile .navbar_profile_name{
     display: none;
   }
+  .main_nav_search_container {
+    width: 100%;
+    padding: 1rem 1rem 3rem 1rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .header_main {
@@ -407,7 +473,6 @@ a {
   }
   /* === Nav === */
   .navbar_main {
-    height: calc(var(--header-height) + 1.5rem);
     margin-inline: auto;
   }
 
@@ -510,9 +575,5 @@ a {
   }
 }
 
-@media screen and (min-width: 100rem) {
-  #navbar_profile_search > #navbar_search_dropdown {
-    width: calc(2rem + var(--main-navbar-width));
-  }
-}
+
 

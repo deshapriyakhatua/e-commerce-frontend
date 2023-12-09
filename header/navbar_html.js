@@ -298,44 +298,54 @@ document.write(`
                 <section id="navbar_profile">
                     <div id="navbar_profile_search" class="navbar_profile_child">
                         <div id="navbar_search_icon" class="navbar_profile_child_title">
+                            <div class="show_search_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> search </span>
                             <span class="navbar_profile_name">Search</span>
                         </div>
-                        <div id="navbar_search_dropdown" class="hide_dropdown">
-                            <div id="search_bar_input_container">
-                                <input type="text" id="search_bar_input" placeholder="Search for products, brands and more">
-                                <span id="navbar_search_dropdown_icon" class="material-symbols-rounded "> search </span>
-                            </div>
-                            <div id="search_suggetion">
-                                <span class="nav_search_suggessions">jeans</span>
-                                <span class="nav_search_suggessions">suits</span>
-                            </div>
+                        <div class="navbar_search_dropdown">
+                            <div class="close_search_dropdown"></div>
+                            <div class="main_nav_search_container">
+                                <div id="search_bar_input_container">
+                                    <input type="text" id="search_bar_input" placeholder="Search for products, brands and more">
+                                    <span id="navbar_search_dropdown_icon" class="material-symbols-rounded "> search </span>
+                                </div>
+                                <div id="search_suggetion">
+                                    <span class="nav_search_suggessions">jeans</span>
+                                    <span class="nav_search_suggessions">suits</span>
+                                </div>
+                             </div>
                         </div>
                     </div>
                     <div class="navbar_profile_child">
                         <div class="navbar_profile_child_title">
+                            <div class="show_wishlist_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> favorite </span>
                             <span class="navbar_profile_name">Wishlist</span>
                         </div>
                     </div>
                     <div class="navbar_profile_child">
                         <div class="navbar_profile_child_title">
+                            <div class="show_cart_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> shopping_bag </span>
                             <span class="navbar_profile_name">Cart</span>
                         </div>
                     </div>
                     <div id="navbar_profile_account" class="navbar_profile_child">
                         <div id="navbar_account_icon" class="navbar_profile_child_title">
+                            <div class="show_account_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> person </span>
                             <span class="navbar_profile_name">Profile</span>
                         </div>
-                        <div id="navbar_account_dropdown" class="hide_dropdown">
-                            <a href="/e-commerce-frontend/signin/signin.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
-                            <a href="#" class="dropList" id="navbar_account_dropdown_account"></a>
-                            <a href="#" class="dropList">Gift Cards</a>
-                            <a href="#" class="dropList">Coupons</a>
-                            <a href="#" class="dropList">Saved Address</a>
-                            <a href="#" class="dropList">Saved Cards</a>
+                        <div class="navbar_account_dropdown">
+                            <div class="close_account_dropdown"></div>
+                            <div class="main_nav_account_container">
+                                <a href="/e-commerce-frontend/signin/signin.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
+                                <a href="#" class="dropList" id="navbar_account_dropdown_account"></a>
+                                <a href="#" class="dropList">Gift Cards</a>
+                                <a href="#" class="dropList">Coupons</a>
+                                <a href="#" class="dropList">Saved Address</a>
+                                <a href="#" class="dropList">Saved Cards</a>
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -4,9 +4,7 @@
 const navToggle = document.getElementById('navbar_toggle');
 const navMenu = document.getElementById('navbar_menu');
 
-navToggle.addEventListener('click', () =>{
-    document.getElementById("navbar_search_dropdown").className  = 'hide_dropdown';
-    document.getElementById("navbar_account_dropdown").className  = 'hide_dropdown';
+navToggle.addEventListener('click', () =>{ 
     showOrHideMenu();
 });
 
@@ -69,35 +67,40 @@ const removeStyle = () =>{
 
 addEventListener('resize', removeStyle);
 
-/*=============== SHOW SEARCH BAR & ACCOUNT ===============*/
-const searchIcon = document.getElementById("navbar_search_icon");
-const searchDropdown = document.getElementById("navbar_search_dropdown");
-const accountIcon = document.getElementById("navbar_account_icon");
-const accountDropdown = document.getElementById("navbar_account_dropdown");
+/*=============== SHOW & HIDE SEARCH BAR ===============*/
+const showSearchDropdownButton = document.querySelector(".show_search_dropdown_button");
+const searchDropdown = document.querySelector(".navbar_search_dropdown");
+const closeSearchDropdown = document.querySelector(".close_search_dropdown");
 
-const showOrHideDropdown = (icon, item)=> {
-    icon.addEventListener("click",(e)=>{
-       
-        if(navMenu.classList.contains("show-menu")){
-            showOrHideMenu();
-        }
-
-        icon === searchIcon ?accountDropdown.className = 'hide_dropdown' :searchDropdown.className = 'hide_dropdown';
-        item.classList = item.className === 'visible_dropdown' ?'hide_dropdown' :'visible_dropdown';
-    });
-}
-
-showOrHideDropdown(searchIcon, searchDropdown);
-showOrHideDropdown(accountIcon, accountDropdown);
-
-// hide search & account dropdown when navbar_menu is hovered
-navMenu.addEventListener("mouseover", ()=> {
-    accountDropdown.className = 'hide_dropdown';
-    searchDropdown.className = 'hide_dropdown';
+showSearchDropdownButton.addEventListener("click",(e)=>{
+    searchDropdown.classList.add("visible_dropdown");
+});
+closeSearchDropdown.addEventListener("click",(e)=>{
+    searchDropdown.classList.remove("visible_dropdown");
 });
 
+/* ============== SHOW & HIDE ACCOUNT ===============*/
+const showAccountDropdownButton = document.querySelector(".show_account_dropdown_button");
+const accountDropdown = document.querySelector(".navbar_account_dropdown");
+const closeAccountDropdown = document.querySelector(".close_account_dropdown");
 
-/* ======== Account details ========= */
+showAccountDropdownButton.addEventListener("click",(e)=>{
+    accountDropdown.classList.add("visible_dropdown");
+});
+closeAccountDropdown.addEventListener("click",(e)=>{
+    accountDropdown.classList.remove("visible_dropdown");
+});
+
+window.onload = function(){
+    document.onclick = function(element){
+        
+        console.log("class ",element.target.className);
+        console.log("id ",element.target.id);
+    }
+}
+
+
+/* ======== Load Account details ========= */
 
 const jwtToken = getCookie("jwtToken");
 
