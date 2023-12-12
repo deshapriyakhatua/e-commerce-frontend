@@ -7,15 +7,8 @@ window.onload = function () {
     });
 
     document.querySelector(".close_navigation").addEventListener("click", (e) => {
-        document.querySelector(".main_navigation").style.left = "-" + window.getComputedStyle(document.querySelector(':root')).getPropertyValue('--navigation-width');
+        document.querySelector(".main_navigation").style.left = "-" + window.getComputedStyle(document.querySelector('.navigation')).getPropertyValue('--navigation-width');
         document.querySelector(".close_navigation").style.display = "none";
     });
 
-
-    document.onclick = function (e) {
-        console.log(e.target.className);
-    }
-
-
-    
 }

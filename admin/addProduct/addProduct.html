@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Add Product</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="/e-commerce-frontend/admin/home/home.css">
+    <link rel="stylesheet" href="/e-commerce-frontend/admin/addProduct/addProduct.css">
     <link rel="stylesheet" href="/e-commerce-frontend/admin/sidebar/sidebar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100..700,0..1,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 <body>
     
     <div class="container">
-      
+        
         <!-- =============== Navigation ================ -->
         <script src="/e-commerce-frontend/admin/sidebar/sidebarHTML.js"></script>
 
@@ -39,141 +39,84 @@
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
+            <!-- ======================= Image Cards ================== -->
             <div class="cardBox">
                 <div class="card">
-                    <div>
-                        <div class="cardName">Daily Views</div>
-                        <div class="cardNumbers">1,504</div>
-                        <div>
-                            <span class="cardTime">Since today</span>
-                        </div>
-                    </div>
+                    <img class="upload_image" src="https://www.ezcopy.net/wp-content/uploads/2018/02/upload-1.png" alt="">
 
-                    <div class="iconBx">
-                        <span class="material-symbols-rounded">visibility</span>
+                    <div class="image_input_box">
+                        <input class="input_url" type="text" placeholder="Paste URL">
+                        <span class="material-symbols-rounded upload_image_button">upload</span>
                     </div>
                 </div>
-
                 <div class="card">
-                    <div>
-                        <div class="cardName">Sales</div>
-                        <div class="cardNumbers">80</div>
-                        <div>
-                            <span class="cardTime">Since today</span>
-                        </div>
-                    </div>
+                    <img class="upload_image" src="https://www.ezcopy.net/wp-content/uploads/2018/02/upload-1.png" alt="">
 
-                    <div class="iconBx">
-                        <span class="material-symbols-rounded">shopping_cart</span>
+                    <div class="image_input_box">
+                        <input class="input_url" type="text" placeholder="Paste URL">
+                        <span class="material-symbols-rounded upload_image_button">upload</span>
                     </div>
                 </div>
-
                 <div class="card">
-                    <div>
-                        <div class="cardName">Comments</div>
-                        <div class="cardNumbers">284</div>
-                        <div>
-                            <span class="cardTime">Since today</span>
-                        </div>
-                    </div>
+                    <img class="upload_image" src="https://www.ezcopy.net/wp-content/uploads/2018/02/upload-1.png" alt="">
 
-                    <div class="iconBx">
-                        <span class="material-symbols-rounded">chat</span>
+                    <div class="image_input_box">
+                        <input class="input_url" type="text" placeholder="Paste URL">
+                        <span class="material-symbols-rounded upload_image_button">upload</span>
                     </div>
                 </div>
-
                 <div class="card">
-                    <div>
-                        <div class="cardName">Earning</div>
-                        <div class="cardNumbers">7,842</div>
-                        <div>
-                            <span class="cardTime">Since today</span>
-                        </div>
-                    </div>
+                    <img class="upload_image" src="https://www.ezcopy.net/wp-content/uploads/2018/02/upload-1.png" alt="">
 
-                    <div class="iconBx">
-                        <span class="material-symbols-rounded">money</span>
+                    <div class="image_input_box">
+                        <input type="text" class="input_url" placeholder="Paste URL">
+                        <span class="material-symbols-rounded upload_image_button">upload</span>
                     </div>
                 </div>
+              
             </div>
 
-            <!-- ================ Order Details List ================= -->
+            <!-- ================ Product Input List ================= -->
             <div class="details">
-                <div class="recentOrders">
+                <div class="productDetails">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="#" class="btn">View All</a>
+                        <h2>Product Details</h2>
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Product Title: </span>
+                        <input class="product_input" type="text">
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Selling Price: </span>
+                        <input class="product_input" type="text">
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Delivery Chargs: </span>
+                        <input class="product_input" type="text">
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Product Category: </span>
+                        <input class="product_input" type="text">
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Product Category: </span>
+                        <select name="subject" id="subject">
+                            <option value="" selected="selected">Select subject</option>
+                        </select>
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Product Category: </span>
+                        <select name="topic" id="topic">
+                            <option value="" selected="selected">Please select subject first</option>
+                        </select>
+                    </div>
+                    <div class="product_input_holder">
+                        <span class="product_input_hint">Product Category: </span>
+                        <select name="chapter" id="chapter">
+                            <option value="" selected="selected">Please select topic first</option>
+                        </select>
                     </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Dell Laptop</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>Addidas Shoes</td>
-                                <td>$620</td>
-                                <td>Due</td>
-                                <td><span class="status inProgress">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
 
                 <!-- ================= New Customers ================ -->
@@ -262,6 +205,6 @@
 
     
 </body>
-<script src="/e-commerce-frontend/admin/home/home.js"></script>
 <script src="/e-commerce-frontend/admin/sidebar/sidebar.js"></script>
+<script src="/e-commerce-frontend/admin/addProduct/addProduct.js"></script>
 </html>
