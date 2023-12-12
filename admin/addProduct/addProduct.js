@@ -8,6 +8,58 @@ window.onload = function () {
         });
     });
 
+   // create select tags for categories
+
+    function createSelectTag(categoryObject) {
+
+        let selectParent = document.querySelector("#product_category_holder");
+
+        // add new select tag
+        let selectTag = document.createElement("select");
+        selectTag.className = "created_select";
+
+        selectTag.appendChild(new Option("Select","Select"));
+
+        // append option tags to new select tag
+        if(Array.isArray(categoryObject)){
+
+            for(let val of categoryObject){
+                selectTag.appendChild(new Option(val,val));
+            }
+
+        }else{
+
+            for(let key in categoryObject){
+                selectTag.appendChild(new Option(key,key));
+            }
+
+        }
+        
+        selectParent.append(selectTag);
+
+        // add event listner to new select tag
+        selectTag.onchange = function () {
+
+            let selectParent = document.querySelector("#product_category_holder");
+
+            // first remove if select chain created
+            let alreadyCreatedSelects = document.querySelectorAll(".created_select");
+            let boolean = false;
+            
+            alreadyCreatedSelects.forEach((element, index)=>{
+                if(boolean){ selectParent.removeChild(element); }
+                if(element === this){ boolean = true; }
+            });
+            
+            // if this select tag still have child
+            if(this.value !== "Select" && typeof categoryObject === "object" && !Array.isArray(categoryObject)){
+                createSelectTag(categoryObject[this.value]);
+            }
+
+        }
+
+    }
+
     const categoryObject = {
         "Front-end": {
             "HTML": ["Links", "Images", "Tables", "Lists"],
@@ -18,36 +70,9 @@ window.onload = function () {
             "PHP": ["Variables", "Strings", "Arrays"],
             "SQL": ["SELECT", "UPDATE", "DELETE"]
         }
-    }
+    };
 
-
-    const subjectSel = document.getElementById("subject");
-    const topicSel = document.getElementById("topic");
-    const chapterSel = document.getElementById("chapter");
-
-    for (let x in categoryObject) {
-        subjectSel.options[subjectSel.options.length] = new Option(x, x);
-    }
-    subjectSel.onchange = function () {
-        //empty Chapters- and Topics- dropdowns
-        chapterSel.length = 1;
-        topicSel.length = 1;
-        //display correct values
-        for (let y in categoryObject[this.value]) {
-            topicSel.options[topicSel.options.length] = new Option(y, y);
-        }
-    }
-    topicSel.onchange = function () {
-        //empty Chapters dropdown
-        chapterSel.length = 1;
-        //display correct values
-        var z = categoryObject[subjectSel.value][this.value];
-        for (let i = 0; i < z.length; i++) {
-            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-        }
-    }
-
-
+    createSelectTag(categoryObject)
 
 
 
