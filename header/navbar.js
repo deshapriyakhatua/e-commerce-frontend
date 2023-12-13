@@ -1,4 +1,7 @@
+let preOnloadNavbar = window.onload;
+
 window.onload = function () {
+    if(preOnloadNavbar){ preOnloadNavbar(); }
 
     /*=============== SHOW MENU ===============*/
     const navToggle = document.getElementById('navbar_toggle');
@@ -85,13 +88,13 @@ window.onload = function () {
     const closeAccountDropdown = document.querySelector(".close_account_dropdown");
 
     showAccountDropdownButton.addEventListener("click", (e) => {
-        accountDropdown.classList.add("visible_dropdown");
+        accountDropdown.classList.add("visible_dropdown"); console.log(100)
     });
     closeAccountDropdown.addEventListener("click", (e) => {
         accountDropdown.classList.remove("visible_dropdown");
     });
 
-    
+    console.log(100)
 
 
     /* ======== Load Account details ========= */

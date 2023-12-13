@@ -1,4 +1,7 @@
+let preOnloadHome = window.onload;
+
 window.onload = function () {
+    if(preOnloadHome){ preOnloadHome(); }
 
     /* ============== open & close navigation =============== */
     

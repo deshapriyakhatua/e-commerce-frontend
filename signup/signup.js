@@ -1,4 +1,7 @@
+let preOnloadSignup = window.onload;
+
 window.onload = function () {
+    if(preOnloadSignup){ preOnloadSignup(); }
 
     const apiUrl = BACKEND_PRE_URL + '/auth/signUp';
 

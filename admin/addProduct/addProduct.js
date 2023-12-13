@@ -1,4 +1,7 @@
+let preOnloadAddProduct = window.onload;
+
 window.onload = function () {
+    if(preOnloadAddProduct){ preOnloadAddProduct(); }
 
     /* ============== open & close navigation =============== */
     

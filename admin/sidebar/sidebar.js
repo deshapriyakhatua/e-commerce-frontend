@@ -1,4 +1,7 @@
+let preOnloadSidebar = window.onload;
+
 window.onload = function () {
+    if(preOnloadSidebar){ preOnloadSidebar(); }
 
     document.querySelector(".toggle").addEventListener("click", (e) => {
         console.log("hi")
