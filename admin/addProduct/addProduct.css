@@ -34,6 +34,7 @@ body {
   width: calc(100% - var(--navigation-width));
   left: var(--navigation-width);
   min-height: 100vh;
+  padding: 0 1rem;
   background: #f5f9fc;
   transition: 0.5s;
 }
@@ -63,10 +64,13 @@ body {
   cursor: pointer;
 }
 
-.search {
+.page_title {
   position: relative;
-  width: 400px;
-  margin: 0 10px;
+}
+
+.page_title h2 {
+  color: #474747;
+  font-weight: 500;
 }
 
 .user {
@@ -91,7 +95,7 @@ body {
 .cardBox {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
@@ -145,7 +149,7 @@ body {
 .details {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
@@ -154,7 +158,11 @@ body {
 
 .details .productDetails {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
   min-height: 500px;
   background: var(--white);
   padding: 20px;
@@ -174,6 +182,7 @@ body {
 }
 
 .details .product_input_holder {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,65 +192,103 @@ body {
 
 .product_input_holder .product_input,
 .product_input_holder .created_select  {
-  height: 2rem;
+  height: 2.5rem;
   width: 100%;
   padding: .5rem;
 }
 
 
-
+/* ============ Product Description Input List ============ */
 
 .recentCustomers {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
   min-height: 500px;
-  padding: 20px;
+  padding: 1rem 1rem;
   background: var(--white);
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
 }
 
-.recentCustomers .imgBx {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-
-.recentCustomers .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.recentCustomers .product_desc_table {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.recentCustomers table tr td {
-  padding: 12px 10px;
-}
-
-.recentCustomers table tr td h4 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.2rem;
-}
-
-.recentCustomers table tr td h4 span {
-  font-size: 14px;
-  color: var(--black2);
 }
 
 .recentCustomers table tr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
   cursor: pointer;
   transition: all .3s ease-in-out;
+}
+.recentCustomers table tr td {
+  padding: .5rem 0;
+}
+
+.recentCustomers table tr td input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1rem;
 }
 
 .recentCustomers table tr:hover {
   background: rgb(242, 240, 240);
 }
 
+.recentCustomers .add_new_input_field {
+  padding: .4rem 1rem;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.recentCustomers .add_new_input_field:hover {
+  background-color: rgb(236, 234, 234);
+}
+
+
+/* =============== Submit button ================ */
+.submit_button_container {
+  width: 100%;
+  padding: 5rem 0;
+}
+.add_product_button {
+  width: 100%;
+  padding: .5rem 0;
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add_product_button:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.add_product_button:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.add_product_button:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.add_product_button:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
 
 /* ====================== Responsive Design ========================== */
 

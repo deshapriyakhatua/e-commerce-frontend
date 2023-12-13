@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    /* ============== open & close navigation =============== */
+    
     document.querySelector(".toggle").addEventListener("click", (e) => {
         console.log("hi")
         document.querySelector(".main_navigation").style.left = "0px";

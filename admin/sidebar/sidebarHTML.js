@@ -17,7 +17,7 @@ document.write(`
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/e-commerce-frontend/admin/products/products.html">
                         <span class="material-symbols-rounded icon">list_alt</span>
                         <span class="title">Products</span>
                     </a>
