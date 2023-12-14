@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign Up</title>
 
 <style type="text/css">
@@ -119,7 +121,20 @@ a.ssolink {
 	font-size: 14px;
 	text-align: center;
 }
-
+@media screen and (max-width: 1000px) {
+	.signin_container {
+		padding: 2rem 0;
+	}
+}
+@media screen and (max-width: 500px) {
+	.field input {
+		width: 300px;
+	}
+	.formbg {
+		padding: 2.5rem 1rem;
+		box-shadow: none;
+	}
+}
 </style>
 
 </head>
