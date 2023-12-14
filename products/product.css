@@ -34,7 +34,6 @@
 @media screen and (max-width: 768px) {
     #products_main_container {
         --product-card-width: 180px;
-        --sort-n-filter-width: 50%;
         --padding-inline: 10px;
     }
 }
@@ -60,6 +59,10 @@
 a {
     text-decoration: none;
     color: var(--dark-gray);
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 #products_main_container {
@@ -133,133 +136,72 @@ a {
     margin-left: 10px;
 }
 
-/* ======== Sort Bar ========= */
+/* ================== Filter & Sort Bar ================ */
 
-.main_product_sort {
+.main_product_filter_sort {
     width: 100%;
     height: 60px;
-    padding: 0 var(--padding-inline);
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.main_product_sort #title_filter {
-    font-size: var(--font-size-md);
-    color: var(--dark-gray);
-    font-weight: bold;
-}
-.main_product_sort .filter__options_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: var(--sort-n-filter-width);
-    height: 40px;
-    padding: 0 1rem;
-    border: 1px solid var(--gray-light);
-    font-size: var(--font-size-md);
-    color: var(--gray);
-    visibility: hidden;
-}
-.filter__options_container #filter_option_pre_text {
-    color: var(--dark-gray);
-    font-weight: bold;
-}
-.filter__options_container .filter_dropdown_arrow {
-    transition: all .2s;
-}
-.main_product_sort > .sort__options_container {
+
+.main_product_filter_sort .filter__options_container {
     position: relative;
+    width: var(--sort-n-filter-width);
+}
+
+.filter__options_container .filter_button_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: var(--sort-n-filter-width);
+    width: 100%;
     height: 40px;
     padding: 0 1rem;
     border: 1px solid var(--gray-light);
     font-size: var(--font-size-md);
     color: var(--gray);
 }
-.sort__options_container > #selected_option_text {
-    font-size: var(--font-size-md);
-    font-weight: bold;
-    color: var(--dark-gray);
-    display: none;
-}
-.sort__options_container > #selected_option_pre_text {
-    height: max-content;
-    color: var(--dark-gray);
-    font-weight: var(--font-weight);
-}
-.sort__options_container > #selected_option {
-    font-size: var(--font-size-md);
-    font-weight: bold;
-    color: var(--dark-gray);
-}
-.sort__options_container > .sort_dropdown_arrow {
-    height: max-content;
-    color: var(--dark-gray);
-    transition: all .2s;
-}
-.sort__options_container:hover .sort_dropdown_arrow {
-    transform: rotate(180deg);
-}
-.sort__options_container > .sort_options_parent {
+.filter_button_container .filter_button {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    border: 1px solid var(--gray-light);
+    height: 40px;
+    cursor: pointer;
+}
+.filter_button_container .filter_option_pre_text {
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+.filter_button_container .filter_dropdown_arrow {
+    color: var(--dark-gray);
+    transition: all .3s ease-in-out;
+}
+
+.filter__options_container .filter_options_parent {
+    position: absolute;
+    width: 100%;
     background-color: white;
-    opacity: 0;
+    border: 1px solid var(--gray-light);
     z-index: 10;
     visibility: hidden;
 }
-.sort__options_container:hover .sort_options_parent {
-    opacity: 1;
-    visibility: visible;
-}
-.sort_options_parent > input {
-    height: 38px;
-    padding: 9px 14px;
-    border-width: 0;
-    border-radius: 0;
-    background-color: transparent;
-    cursor: pointer;
-}
-.sort_options_parent > input:hover {
-    background-color: var(--gray-light);
-}
-
-
-
-
-/* ======= Main Filter & Products Container =======*/
-
-.main_products_parent {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 0;
-    border-top: 1px solid var(--gray-light);
-}
-
-.main_products_parent .main__left {
-    width: 15%;
-    border-right: 1px solid var(--gray-light);
-    background-color: #fff;
-}
-
-.main_products_parent .main__right {
-    width: 85%;
-    background-color: #fff;
+.filter_options_parent .close_main_filter {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.077);
 }
 
 .main_filter {
-    padding: 0;
+    position: relative;
+    padding: 0 0 5rem 0;
+    background-color: white;
 }
 
 .main_filter .filter_card {
@@ -316,7 +258,104 @@ a {
     cursor: pointer;
 }
 
-/* === Main Product ===*/
+
+
+/*================= Sort =================*/
+
+.main_product_filter_sort > .sort__options_container {
+    position: relative;
+    width: var(--sort-n-filter-width);
+}
+.sort__options_container .sort_button_container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 1rem;
+    border: 1px solid var(--gray-light);
+    font-size: var(--font-size-md);
+    color: var(--gray);
+}
+.sort_button_container .sort_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
+.sort_button_container > #selected_option_text {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    color: var(--dark-gray);
+    display: none;
+}
+.sort_button_container > #selected_option_pre_text {
+    height: max-content;
+    color: var(--dark-gray);
+    font-weight: var(--font-weight);
+}
+.sort_button_container > #selected_option {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+.sort_button_container > .sort_dropdown_arrow {
+    height: max-content;
+    color: var(--dark-gray);
+    transition: all .3s;
+}
+
+.sort__options_container > .sort_options_parent {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--gray-light);
+    z-index: 10;
+    visibility: hidden;
+}
+.sort_options_parent .close_main_sort {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.062);
+}
+.sort_options_parent > .main_sort {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+}
+.main_sort > span {
+    width: 100%;
+    height: 38px;
+    padding: 9px 14px;
+    text-align: end;
+    cursor: pointer;
+    font-size: small;
+}
+.main_sort > span:hover {
+    background-color: var(--gray-light);
+}
+
+
+/* ======= Main Products Container =======*/
+
+.main_products_parent {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    border-top: 1px solid var(--gray-light);
+}
 
 .main_product {
     width: 100%;
@@ -469,49 +508,28 @@ a {
     font-size: var(--font-size-md);
     color: var(--red);
 }
+
+/* =================== Responsive ===================== */
 @media screen and (max-width: 1440px) {
-    .main_products_parent .main__left {
-        width: 17%;
-    }
-    .main_products_parent .main__right {
-        width: 83%;
-    }
+   
 }
 
 @media screen and (max-width: 1023px) {
-    .show_filter_container {
-        display: block;
+   
+    .main_product_filter_sort .filter__options_container {
+        width: 50%;
     }
-    .hide_filter_container {
-        display: none;
+    .main_product_filter_sort .sort__options_container {
+        width: 50%;
     }
-    .rotate {
-        rotate: 180deg;
-    }
-    .main_product_sort .filter__options_container {
-        visibility: visible;
-    }
-    .main_product_sort #title_filter {
-        display: none;
-    }
-    .main_products_parent {
-        position: relative;
-    }
-    .main_products_parent .main__left {
-        position: absolute;
-        width: 100%;
-        z-index: 10;
-    }
-    .main_products_parent .main__right {
-        width: 100%;
-    }
-    .sort__options_container > #selected_option_text {
+    
+    .sort_button_container > #selected_option_text {
         display: flex;
     }
-    .sort__options_container > #selected_option_pre_text {
+    .sort_button_container > #selected_option_pre_text {
         display: none;
     }
-    .sort__options_container > #selected_option {
+    .sort_button_container > #selected_option {
         display: none;
     }
 }

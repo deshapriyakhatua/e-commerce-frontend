@@ -3,13 +3,6 @@ let preOnloadProduct = window.onload;
 window.onload = function () {
     if (preOnloadProduct) { preOnloadProduct(); }
 
-    document.querySelector(`.filter__options_container`).addEventListener(`click`, () => {
-        console.log(document.querySelector(`.main__left`))
-        document.querySelector(`.main__left`).classList.toggle(`hide_filter_container`);
-        document.querySelector(`.main__left`).classList.toggle(`show_filter_container`);
-        document.querySelector(`.filter_dropdown_arrow`).classList.toggle(`rotate`);
-    });
-
 
 
     /* ============= load product cards ============ */
@@ -80,7 +73,7 @@ window.onload = function () {
                     <img src="${element} " alt="Men Pack Of 2 Sustainable Shirts">
                     <div class="product__rating">
                         <span class="rating__number">4.5</span>
-                        <span class="material - symbols - rounded rating__icon">star_rate_half</span>
+                        <span class="material-symbols-rounded rating__icon">star_rate_half</span>
                         <span class="rating__seperator">|</span>
                         <span class="rating__count">18.5K</span>
                     </div>
@@ -110,6 +103,30 @@ window.onload = function () {
     loadProductCards();
 
 
+    /* ================= show & hide filter ================= */
 
+    document.querySelector(".filter_button").addEventListener("click",(e)=>{
+        console.log(e.target.className)
+        document.querySelector(".filter_options_parent").style.visibility = "visible";
+        document.querySelector(`.filter_dropdown_arrow`).classList.toggle(`rotate`);
+    });
+    document.querySelector(".close_main_filter").addEventListener("click",(e)=>{
+        console.log(e.target.className)
+        document.querySelector(".filter_options_parent").style.visibility = "hidden";
+        document.querySelector(".filter_dropdown_arrow").classList.toggle(`rotate`);
+    });
+
+    /* ================= show & hide sort ================= */
+
+    document.querySelector(".sort_button").addEventListener("click",(e)=>{
+        console.log(e.target.className)
+        document.querySelector(".sort_options_parent").style.visibility = "visible";
+        document.querySelector(".sort_dropdown_arrow").classList.toggle(`rotate`);
+    });
+    document.querySelector(".close_main_sort").addEventListener("click",(e)=>{
+        console.log(e.target.className)
+        document.querySelector(".sort_options_parent").style.visibility = "hidden";
+        document.querySelector(`.sort_dropdown_arrow`).classList.toggle(`rotate`);
+    });
 
 }
