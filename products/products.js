@@ -70,7 +70,7 @@ window.onload = function () {
             productCard.className = 'product__card';
             productCard.innerHTML = `
                 <div class="product__image">
-                    <img src="${element} " alt="Men Pack Of 2 Sustainable Shirts">
+                    <img src="${element} " alt="Men Pack Of 2 Sustainable Shirts" class="product_main_img">
                     <div class="product__rating">
                         <span class="rating__number">4.5</span>
                         <span class="material-symbols-rounded rating__icon">star_rate_half</span>
@@ -127,6 +127,20 @@ window.onload = function () {
         console.log(e.target.className)
         document.querySelector(".sort_options_parent").style.visibility = "hidden";
         document.querySelector(`.sort_dropdown_arrow`).classList.toggle(`rotate`);
+    });
+
+    /* ==================== Add event listner for product details ===================== */
+
+    document.querySelectorAll(".product_main_img").forEach((element)=>{
+        element.addEventListener("click", (e)=>{
+            window.location = "/e-commerce-frontend/product/product.html"
+        });
+    });
+
+    document.querySelectorAll(".product__name").forEach((element)=>{
+        element.addEventListener("click", (e)=>{
+            window.location = "/e-commerce-frontend/product/product.html"
+        });
     });
 
 }

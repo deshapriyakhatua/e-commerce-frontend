@@ -3,7 +3,7 @@ document.write(`
             <div class="close_navigation"></div>
             <ul class="main_navigation">
                 <li>
-                    <a href="#">
+                    <a href="/e-commerce-frontend/admin/home/home.html">
                         <span class="material-symbols-rounded logo_icon">eco</span>
                         <span class="logo_title">Earz</span>
                     </a>
@@ -31,7 +31,7 @@ document.write(`
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="/e-commerce-frontend/admin/orders/orders.html">
                         <span class="material-symbols-rounded icon">contract</span>
                         <span class="title">Orders</span>
                     </a>

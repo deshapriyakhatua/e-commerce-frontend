@@ -25,7 +25,7 @@ document.write(`
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="/e-commerce-frontend/products/product.html" class="dropdown__link">Washing Machines & Dryers</a>
+                                                <a href="/e-commerce-frontend/products/products.html" class="dropdown__link">Washing Machines & Dryers</a>
                                             </li>
                                             <li>
                                                 <a href="#" class="dropdown__link">Air Conditioner</a>

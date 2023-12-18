@@ -175,6 +175,7 @@ a {
   font-size: 1.5rem;
   font-weight: initial;
   transition: transform 0.4s;
+  visibility: hidden;
 }
 .dropdown__content, .dropdown__group, .dropdown__list {
   display: grid;
