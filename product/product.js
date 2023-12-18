@@ -4,65 +4,24 @@ const imgs = document.querySelectorAll('.img-select img').forEach((imgItem) => {
     imgItem.addEventListener('click', (event) => {
         event.preventDefault();console.log(imgItem.src)
         document.querySelector(".product_image_large").src = imgItem.src;
-        imageZoom("product_image_large", "image_zoom_result");
+        document.querySelector(".img-showcase").style.backgroundImage = `url('${imgItem.src}')`;
     });
 });
 
 /* ======================== Image zoom ======================== */
 
-function imageZoom(imgID, resultID) {
-    let img, lens, result, cx, cy;
-    img = document.querySelector(`.${imgID}`);
-    result = document.querySelector(`.${resultID}`);
-    /*create lens:*/
-    lens = document.querySelector(".img-zoom-lens");
-    /*calculate the ratio between result DIV and lens:*/
-    cx = result.offsetWidth / lens.offsetWidth;
-    cy = result.offsetHeight / lens.offsetHeight;
-    console.log(cx,cy, lens.offsetHeight )
-    /*set background properties for the result DIV:*/
-    result.style.backgroundImage = "url('" + img.src + "')";
-    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-    /*execute a function when someone moves the cursor over the image, or the lens:*/
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
-    /*and also for touch screens:*/
-    lens.addEventListener("touchmove", moveLens);
-    img.addEventListener("touchmove", moveLens);
-    function moveLens(e) {
-        let pos, x, y;
-        /*prevent any other actions that may occur when moving over the image:*/
-        e.preventDefault();
-        /*get the cursor's x and y positions:*/
-        pos = getCursorPos(e);
-        /*calculate the position of the lens:*/
-        x = pos.x - (lens.offsetWidth / 2);
-        y = pos.y - (lens.offsetHeight / 2);
-        /*prevent the lens from being positioned outside the image:*/
-        if (x > img.width - lens.offsetWidth) { x = img.width - lens.offsetWidth; }
-        if (x < 0) { x = 0; }
-        if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
-        if (y < 0) { y = 0; }
-        /*set the position of the lens:*/
-        lens.style.left = x + "px";
-        lens.style.top = y + "px";
-        /*display what the lens "sees":*/
-        result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-    }
-    function getCursorPos(e) {
-        let a, x = 0, y = 0;
-        e = e || window.event;
-        /*get the x and y positions of the image:*/
-        a = img.getBoundingClientRect();
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - a.left;
-        y = e.pageY - a.top;
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        console.log(window.pageYOffset)
-        return { x: x, y: y };
-    }
+function zoom(e){
+    let zoomer = e.currentTarget;
+    console.log(zoomer)
+    e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+    e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+    x = offsetX/zoomer.offsetWidth*100
+    y = offsetY/zoomer.offsetHeight*100
+    zoomer.style.backgroundPosition = x + '% ' + y + '%';
 }
-
-imageZoom("product_image_large", "image_zoom_result");
+document.querySelector(".img-showcase").addEventListener("mousemove", (e)=>{
+    zoom(e);
+});
+document.querySelector(".img-showcase").addEventListener("touchmove", (e)=>{
+    zoom(e);
+});

@@ -88,13 +88,12 @@ window.onload = function () {
     const closeAccountDropdown = document.querySelector(".close_account_dropdown");
 
     showAccountDropdownButton.addEventListener("click", (e) => {
-        accountDropdown.classList.add("visible_dropdown"); console.log(100)
+        accountDropdown.classList.add("visible_dropdown"); 
     });
     closeAccountDropdown.addEventListener("click", (e) => {
         accountDropdown.classList.remove("visible_dropdown");
     });
 
-    console.log(100)
 
 
     /* ======== Load Account details ========= */
@@ -102,7 +101,6 @@ window.onload = function () {
     const jwtToken = getCookie("jwtToken");
 
     if (jwtToken.length != 0) {
-        console.log(jwtToken)
         const apiUrl = BACKEND_PRE_URL + '/home/current_user';
         const requestOptions = {
             method: 'GET',
@@ -115,12 +113,10 @@ window.onload = function () {
             .then(response => {
                 return response.ok ? response.text() : response.json();
             }).then(data => {
-                console.log(data);
                 if (typeof data == "string") {
                     disableSignIn(data);
                 }
             }).catch(error => {
-                console.log(error);
             });
 
     }
