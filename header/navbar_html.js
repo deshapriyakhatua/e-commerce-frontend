@@ -318,7 +318,7 @@ document.write(`
                     </div>
                     <div class="navbar_profile_child">
                         <div class="navbar_profile_child_title">
-                            <div class="show_wishlist_dropdown_button"></div>
+                            <a class="show_wishlist_dropdown_button" href="/e-commerce-frontend/wishlist/wishlist.html"></a>
                             <span class="material-symbols-rounded navbar_profile_icons"> favorite </span>
                             <span class="navbar_profile_name">Wishlist</span>
                         </div>
@@ -351,4 +351,5 @@ document.write(`
                 </section>
             </nav>
         </header>
+        <div class="header_gap_fill"></div>
 `);

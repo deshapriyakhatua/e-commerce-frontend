@@ -25,6 +25,9 @@ header {
   /*========== width & height ==========*/
   --main-navbar-width: 100rem;
 }
+.header_gap_fill {
+  --header-height: 3.5rem;
+}
 @media screen and (min-width: 1200px) {
   header {
     --header-height: 5rem;
@@ -32,6 +35,9 @@ header {
     --small-font-size: .75rem;
     --smaller-font-size: .65rem;
     --font-thin: 400;
+  }
+  .header_gap_fill {
+    --header-height: 5rem;
   }
 }
 
@@ -64,7 +70,7 @@ a {
   background-color: var(--body-color);
   z-index: var(--z-fixed);
 }
-/* stop text selection*/
+/* ================ stop text selection ============= */
 .header_main * {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -368,6 +374,7 @@ a {
   background-color: transparent;
 }
 
+
 /* ======= Cart ======= */
 
 .show_cart_dropdown_button {
@@ -444,6 +451,13 @@ a {
 #navbar_account_dropdown_account {
   display: none;
   font-weight: bold;
+}
+
+/* =========== header gap fill ============ */
+
+.header_gap_fill {
+  width: 100%;
+  height: var(--header-height);
 }
 
 /*=============== responsive ===============*/

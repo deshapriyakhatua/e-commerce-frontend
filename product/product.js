@@ -2,7 +2,7 @@
 
 const imgs = document.querySelectorAll('.img-select img').forEach((imgItem) => {
     imgItem.addEventListener('click', (event) => {
-        event.preventDefault();console.log(imgItem.src)
+        event.preventDefault();
         document.querySelector(".product_image_large").src = imgItem.src;
         document.querySelector(".img-showcase").style.backgroundImage = `url('${imgItem.src}')`;
     });

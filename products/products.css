@@ -19,7 +19,7 @@
     --font-family: 'DM Sans', sans-serif;
     --font-weight: 400;
     --main-navbar-width: 100rem;
-    --product-card-width: 210px;
+    --product-card-width: 250px;
     --sort-n-filter-width: 300px;
     --padding-inline: 30px;
 }
@@ -29,6 +29,7 @@
         --font-size-md: 12px;
         --font-size-lg: 16px;
         --main-navbar-width: 100%;
+        --product-card-width: 210px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -67,7 +68,7 @@ a {
 
 #products_main_container {
     padding: 0;
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: var(--main-navbar-width);
     display: flex;
     flex-direction: column;
