@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+}
+.main_cart_section * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+.main_cart_section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_cart_parent {
+    width: 100%;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+.card_holder {
+    width: 100%;
+}
+.checkout_holder {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.card_parent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    width: 100%;
+    padding: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+.card_image_container {
+    width: 100%;
+}
+.card_image {
+    width: 100%;
+    height: 13.3rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+.card_details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card_details_child {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card_details_child .card_title {
+    font-weight: 400;
+}
+.quantity_button_holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgb(232, 231, 231);
+    background-color: white;
+}
+.quantity_button_holder button {
+    padding: .1rem .5rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.quantity_button_holder button:active {
+    border: 1px solid rgb(214, 212, 212);
+}
+.card_details_child .pack_note {
+    font-size: .9rem;
+    font-weight: 250;
+}
+.edit_button_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.edit_button_parent button {
+    padding: .4rem .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    background-color: white;
+    border: 1px solid rgb(222, 222, 222);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.edit_button_parent button:active {
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgb(180, 180, 180);
+}
+.edit_button_parent button span{
+    font-size: .9rem;
+    font-weight: 500;
+}
+.edit_button_parent button .add_to_wishlist_icon {
+    font-size: 1rem;
+}
+.edit_button_parent button .remove_from_cart {
+    font-size: 1rem;
+}
+.card_details_child .price_parent h3 {
+    font-weight: 400;
+}
+
+.checkout_card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.checkout_card .checkout_title {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.checkout_details {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.checkout_details .checkout_details_row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout_details .row4  .checkout_button{
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    border-width: 0;
+    background-color: rgb(226, 141, 71);
+    color: white;
+}
+.discount_code_cart {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.discount_code_cart input {
+    width: 40%;
+    font-size: 1rem;
+    padding: .2rem 1rem;
+    border: 1px solid rgb(211, 211, 211);
+    outline-color: rgb(221, 221, 221);
+}
+
+@media screen and (max-width: 1200px) {
+    .main_cart_parent {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 780px) {
+    .main_cart_parent {
+        margin: 2rem 0;
+    }
+    .card {
+        padding: 1rem;
+    }
+    .quantity_button_holder button {
+        padding: .1rem .3rem;
+        font-size: 1rem;
+    }
+    .edit_button_parent {
+        gap: 1rem;
+    }
+    .edit_button_parent button {
+        padding: .3rem;
+        border-radius: 50%;
+    }
+    .card_details_child .edit_button_parent .move_to_wishlist_button_text {
+        display: none;
+    }
+    
+}
