@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-
+    <!--=============== Navbar CSS ===============-->
+    <link rel="stylesheet" href="/e-commerce-frontend/header/navbar.css">
+    <!--=============== Footer CSS ===============-->
+    <link rel="stylesheet" href="/e-commerce-frontend/footer/footer.css">
+    <!--=============== Cart CSS ===============-->
     <link rel="stylesheet" href="/e-commerce-frontend/cart/cart.css">
     <!--=============== Google Fonts & Icon ===============-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100..700,0..1,0" >
@@ -16,35 +20,40 @@
 </head>
 
 <body>
+
+    <!--=============== Navbar HTML ===============-->
+    <script src="/e-commerce-frontend/header/navbar_html.js"></script>
+
+    <!--============== Cart HTML ============== --> 
     <section class="main_cart_section">
         <div class="main_cart_parent">
             <div class="card_holder">
-                <h4>Cart (<span>2</span>items)</h4>
+                <h4 class="card_holder_title">Cart (<span>3</span>items)</h4>
                 <div class="card_parent">
                     <div class="card">
                         <div class="card_image_container">
                             <img class="card_image"
-                                src="https://images.unsplash.com/photo-1617171594202-100a53bdfe04?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA4NjE0MjN8&amp;ixlib=rb-4.0.3&amp;q=85"
+                                src="https://www.mydesignation.com/wp-content/uploads/2019/12/manushyan-tshirt-mydesignation-mockup-latest-image-.jpg"
                                 alt="Blue Hoodie">
                         </div>
                         <div class="card_details">
                             <div class="card_details_child">
-                                <h2 class="card_title">Blue Hoodie</h2>
+                                <h2 class="card_title">Modulo color t-Shirt</h2>
+                            </div>
+                            <div class="card_details_child">
+                                <p>Hodie-B</p>
+                            </div>
+                            <div class="card_details_child">
+                                <p><span>Color : </span><span>Blue</span></p>
                                 <div class="quantity_button_holder">
                                     <button type="button" class="btn_quantity_decrease">−</button>
-                                    <span class="p-quantiry">0</span>
+                                    <span class="span_quantiry">0</span>
                                     <button type="button" class="btn_quantity_increase">+</button>
                                 </div>
                             </div>
                             <div class="card_details_child">
-                                <p>Hodie-B</p>
-                                <p class="pack_note">(<span> 1 piece</span>)</p>
-                            </div>
-                            <div class="card_details_child">
-                                <p><span>Color : </span><span>Blue</span></p>
-                            </div>
-                            <div class="card_details_child">
                                 <p><span>Size : </span><span>M</span></p>
+                                <p class="pack_note">(<span> 1 piece</span>)</p>
                             </div>
                             <div class="card_details_child">
                                 <div class="edit_button_parent">
@@ -66,27 +75,27 @@
                     <div class="card">
                         <div class="card_image_container">
                             <img class="card_image"
-                                src="https://images.unsplash.com/photo-1617171594202-100a53bdfe04?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA4NjE0MjN8&amp;ixlib=rb-4.0.3&amp;q=85"
+                                src="https://www.mydesignation.com/wp-content/uploads/2022/08/oops-tshirt-mockup-image-500x500.jpg"
                                 alt="Blue Hoodie">
                         </div>
                         <div class="card_details">
                             <div class="card_details_child">
-                                <h2 class="card_title">Blue Hoodie</h2>
+                                <h2 class="card_title">Jombok t-Shirt printed</h2>
+                            </div>
+                            <div class="card_details_child">
+                                <p>Hodie-B</p>
+                            </div>
+                            <div class="card_details_child">
+                                <p><span>Color : </span><span>Blue</span></p>
                                 <div class="quantity_button_holder">
                                     <button type="button" class="btn_quantity_decrease">−</button>
-                                    <span class="p-quantiry">0</span>
+                                    <span class="span_quantiry">0</span>
                                     <button type="button" class="btn_quantity_increase">+</button>
                                 </div>
                             </div>
                             <div class="card_details_child">
-                                <p>Hodie-B</p>
-                                <p class="pack_note">(<span> 1 piece</span>)</p>
-                            </div>
-                            <div class="card_details_child">
-                                <p><span>Color : </span><span>Blue</span></p>
-                            </div>
-                            <div class="card_details_child">
                                 <p><span>Size : </span><span>M</span></p>
+                                <p class="pack_note">(<span> 1 piece</span>)</p>
                             </div>
                             <div class="card_details_child">
                                 <div class="edit_button_parent">
@@ -100,7 +109,7 @@
                                     </button>
                                 </div>
                                 <div class="price_parent">
-                                    <h3>354 Rs.</h3>
+                                    <h3>974 Rs.</h3>
                                 </div>
                             </div>
                         </div>
@@ -108,27 +117,27 @@
                     <div class="card">
                         <div class="card_image_container">
                             <img class="card_image"
-                                src="https://images.unsplash.com/photo-1617171594202-100a53bdfe04?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA4NjE0MjN8&amp;ixlib=rb-4.0.3&amp;q=85"
+                                src="https://www.mydesignation.com/wp-content/uploads/2023/01/avial-tshirt-image-500x500.jpg"
                                 alt="Blue Hoodie">
                         </div>
                         <div class="card_details">
                             <div class="card_details_child">
-                                <h2 class="card_title">Blue Hoodie</h2>
+                                <h2 class="card_title">Printed t-Shirt</h2>
+                            </div>
+                            <div class="card_details_child">
+                                <p>Hodie-B</p>
+                            </div>
+                            <div class="card_details_child">
+                                <p><span>Color : </span><span>Blue</span></p>
                                 <div class="quantity_button_holder">
                                     <button type="button" class="btn_quantity_decrease">−</button>
-                                    <span class="p-quantiry">0</span>
+                                    <span class="span_quantiry">0</span>
                                     <button type="button" class="btn_quantity_increase">+</button>
                                 </div>
                             </div>
                             <div class="card_details_child">
-                                <p>Hodie-B</p>
-                                <p class="pack_note">(<span> 1 piece</span>)</p>
-                            </div>
-                            <div class="card_details_child">
-                                <p><span>Color : </span><span>Blue</span></p>
-                            </div>
-                            <div class="card_details_child">
                                 <p><span>Size : </span><span>M</span></p>
+                                <p class="pack_note">(<span> 1 piece</span>)</p>
                             </div>
                             <div class="card_details_child">
                                 <div class="edit_button_parent">
@@ -142,11 +151,12 @@
                                     </button>
                                 </div>
                                 <div class="price_parent">
-                                    <h3>354 Rs.</h3>
+                                    <h3>704 Rs.</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="checkout_holder">
@@ -181,6 +191,16 @@
             </div>
         </div>
     </section>
+
+    <!--=============== Footer HTML ===============-->
+    <script src="/e-commerce-frontend/footer/footer_html.js"></script>
+        
+        
+    <!--=============== Global JS ===============-->
+    <script src="/e-commerce-frontend/global/global.js"></script>
+
+    <!--=============== Navbar JS ===============-->
+    <script src="/e-commerce-frontend/header/navbar.js"></script>
 
 </body>
 

@@ -325,7 +325,7 @@ document.write(`
                     </div>
                     <div class="navbar_profile_child">
                         <div class="navbar_profile_child_title">
-                            <div class="show_cart_dropdown_button"></div>
+                            <a class="show_cart_dropdown_button" href="/e-commerce-frontend/cart/cart.html"></a>
                             <span class="material-symbols-rounded navbar_profile_icons"> shopping_bag </span>
                             <span class="navbar_profile_name">Cart</span>
                         </div>
