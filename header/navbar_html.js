@@ -4,10 +4,10 @@ document.write(`
                 <div class="navbar_data">
                     <div id="navbar_toggle">
                         <span class="material-symbols-rounded navbar_toggle_menu"> menu </span>
-                        <i class="material-symbols-rounded navbar_toggle_close"> close </i>
+                        <span class="material-symbols-rounded navbar_toggle_close"> close </span>
                     </div>
                     <a href="/e-commerce-frontend/home/home.html" class="navbar_logo">
-                        <span class="material-symbols-rounded"> eco </span> E-Mart
+                        <span class="material-symbols-rounded"> eco </span> E-MART
                     </a>
                 </div>
 
@@ -15,7 +15,7 @@ document.write(`
                     <ul class="navbar_list">
                         <li class="dropdown__item">                      
                             <div class="nav__link dropdown__button">
-                                Discover <span class="material-symbols-rounded dropdown__arrow"> expand_more </span>
+                                Discover 
                             </div>
 
                             <div class="dropdown__container">
@@ -112,7 +112,7 @@ document.write(`
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                Gaming <span class="material-symbols-rounded dropdown__arrow"> expand_more </span>
+                                Gaming 
                             </div>
 
                             <div class="dropdown__container">
@@ -175,7 +175,7 @@ document.write(`
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                Accessories <span class="material-symbols-rounded dropdown__arrow"> expand_more </span>
+                                Accessories 
                             </div>
 
                             <div class="dropdown__container">
@@ -256,7 +256,7 @@ document.write(`
                         </li>
                         <li class="dropdown__item">                        
                             <div class="nav__link dropdown__button">
-                                Company <span class="material-symbols-rounded dropdown__arrow"> expand_more </span>
+                                Company 
                             </div>
 
                             <div class="dropdown__container">
@@ -300,7 +300,6 @@ document.write(`
                         <div id="navbar_search_icon" class="navbar_profile_child_title">
                             <div class="show_search_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> search </span>
-                            <span class="navbar_profile_name">Search</span>
                         </div>
                         <div class="navbar_search_dropdown">
                             <div class="close_search_dropdown"></div>
@@ -320,21 +319,18 @@ document.write(`
                         <div class="navbar_profile_child_title">
                             <a class="show_wishlist_dropdown_button" href="/e-commerce-frontend/wishlist/wishlist.html"></a>
                             <span class="material-symbols-rounded navbar_profile_icons"> favorite </span>
-                            <span class="navbar_profile_name">Wishlist</span>
                         </div>
                     </div>
                     <div class="navbar_profile_child">
                         <div class="navbar_profile_child_title">
                             <a class="show_cart_dropdown_button" href="/e-commerce-frontend/cart/cart.html"></a>
-                            <span class="material-symbols-rounded navbar_profile_icons"> shopping_bag </span>
-                            <span class="navbar_profile_name">Cart</span>
+                            <span class="material-symbols-rounded navbar_profile_icons"> shopping_cart </span>
                         </div>
                     </div>
                     <div id="navbar_profile_account" class="navbar_profile_child">
                         <div id="navbar_account_icon" class="navbar_profile_child_title">
                             <div class="show_account_dropdown_button"></div>
                             <span class="material-symbols-rounded navbar_profile_icons"> person </span>
-                            <span class="navbar_profile_name">Profile</span>
                         </div>
                         <div class="navbar_account_dropdown">
                             <div class="close_account_dropdown"></div>
