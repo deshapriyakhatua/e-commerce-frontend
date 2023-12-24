@@ -29,7 +29,7 @@
     position: relative;
     width: 100%;
     padding: 0 1rem;
-    background: #f5f9fc;
+    background: #ffffff;
     transition: 0.5s;
   }
   
@@ -58,7 +58,6 @@
     justify-content: space-between;
     gap: .5rem;
     align-items: center;
-    box-shadow: 0px 3px 3px -1px rgba(10, 22, 70, .1), 0px 0px 1px 0px rgba(10, 22, 70, .06) !important;
   }
   
   .cardBox .card .upload_image {
