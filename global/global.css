@@ -1,0 +1,41 @@
+/* ================ variables ============= */
+:root {
+    --font-family: 'DM Sans', sans-serif;
+    --font-size-1: 24px;
+    --font-size-2: 23px;
+    --font-size-3: 21px;
+    --font-size-4: 20px;
+    --font-size-5: 18px;
+    --font-size-6: 17px;
+    --font-size-7: 16px;
+    --font-size-8: 15px;
+    --font-size-9: 14px;
+    --font-size-10: 13px;
+    --background-color: white;
+    --color: black;
+    --background-color-hover: white;
+    --color-hover: black;
+    --nav-z-index: 100;
+    --main-navbar-width: 100rem;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+/* ================ stop text selection ============= */
+.stop_selection_child * {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.stop_selection {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
