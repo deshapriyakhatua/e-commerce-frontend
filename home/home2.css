@@ -17,13 +17,14 @@
 	position: relative;
 }
 
-.banner-img {
+.banner_img {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 	object-fit: cover;
 	object-position: center;
+	transition: all .2s ease-in;
 }
 
 #banner .arrow {
@@ -99,33 +100,37 @@
 /* ============ Current Offers ============*/
 .container {
 	--width: 33%;
-  	--gap: 0.5rem;
+	--gap: 0.5rem;
 	position: relative;
 	margin: auto;
 	width: var(--main-navbar-width);
 	height: 450px;
 	overflow: hidden;
-  }
-  
-  .slider { height: 100%; }
-  
-  .slider-track {
+}
+
+.slider {
+	height: 100%;
+	border: 2px solid rgb(0, 0, 0);
+}
+
+.slider-track {
 	position: relative;
 	left: calc(-66% - var(--gap)*2);
 	height: inherit;
 	display: flex;
 	gap: var(--gap);
 	list-style-type: none;
+	border: 1px solid red;
 	transition: transform 0.8s;
-  
-	& .item {
-	  min-width: var(--width);
-	  background-position: center;
-	  background-size: cover;
-	}
-  }
-  
-  .btn {
+}
+
+.slider-track .item {
+	min-width: var(--width);
+	background-position: center;
+	background-size: cover;
+}
+
+.btn {
 	position: absolute;
 	top: 50%;
 	width: 2.3rem;
@@ -137,28 +142,36 @@
 	opacity: 0.5;
 	cursor: pointer;
 	transition: opacity 0.3s;
-  
-	&:hover           { opacity: 1;}
-	&:nth-of-type(1)  { left: 2vmin; }
-	&:nth-of-type(2)  { right: 2vmin; }
-  }
-  
-  @media (width < 1000px) {
+}
+
+.btn:hover {
+	opacity: 1;
+}
+
+.btn:nth-of-type(1) {
+	left: 2vmin;
+}
+
+.btn:nth-of-type(2) {
+	right: 2vmin;
+}
+
+@media screen and (max-width: 1000px) {
 	.slider-track {
-	  left: calc(-100% - var(--gap) * 2);
-  
-	  & .item {
+		left: calc(-100% - var(--gap) * 2);
+	}
+
+	.slider-track .item {
 		min-width: 50%;
-	  }
 	}
-  }
-  
-  @media (width < 700px) {
+}
+
+@media screen and (max-width: 700px) {
 	.slider-track {
-	  left: calc(-200% - var(--gap) * 2);
-  
-	  & .item {
-		min-width: 100%;
-	  }
+		left: calc(-200% - var(--gap) * 2);
 	}
-  }
+
+	.slider-track .item {
+		min-width: 100%;
+	}
+}

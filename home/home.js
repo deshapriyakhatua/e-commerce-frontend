@@ -14,93 +14,54 @@ const slides = [
     }
 ];
 
-/*=============== VARIABLES ===============*/
+const bannerImg = document.querySelector(".banner_img");
+bannerImg.src = slides[0].imageUrl;
+let bannerIndex = 0;
+let sliderInterval;
+autoSlide();
 
-const dotsContainer = document.querySelector(".dots");
-const arrowRight = document.querySelector(".arrow_right");
-const arrowLeft = document.querySelector(".arrow_left");
-const img = document.querySelector(".banner-img");
-let index = 0;
-
-function createDot(i) {
-
-    const dot = document.createElement("div");
-    dot.classList.add("dot");
-    dotsContainer.appendChild(dot);
-    dot.addEventListener("click", () => {
-        updateCarousel(i);
+document.querySelectorAll(".dots .dot").forEach((elem,i)=>{
+    elem.addEventListener("click", () => {
+        const selectDots = document.querySelectorAll(".dots .dot");
+        selectDots[bannerIndex].classList.remove("dot_selected");
+        bannerIndex = i;
+        bannerImg.src = slides[bannerIndex].imageUrl;
+        selectDots[bannerIndex].classList.add("dot_selected");
+        autoSlide();
     });
-
-    if (i === index) {
-        dot.classList.add("dot_selected");
-    }
-}
-
-function displayDots() {
-
-    for (let i = 0; i < slides.length; i++) {
-        createDot(i);
-    }
-}
-
-function updateCarousel(i) {
-
-    const selectDots = document.querySelectorAll(".dots .dot");
-    selectDots[index].classList.remove("dot_selected");
-    index = i;
-    img.src = slides[index].imageUrl;
-    selectDots[index].classList.add("dot_selected");
-}
+});
 
 function slide(direction) {
-
+    
     const selectDots = document.querySelectorAll(".dots .dot");
-    selectDots[index].classList.remove("dot_selected");
+    selectDots[bannerIndex].classList.remove("dot_selected");
     if (direction === "right") {
-        index = (index + 1) % slides.length;
+        bannerIndex = (bannerIndex + 1) % slides.length;
     } else {
-        index = (index - 1 + slides.length) % slides.length;
+        bannerIndex = (bannerIndex - 1 + slides.length) % slides.length;
     }
-    img.src = slides[index].imageUrl;
-    selectDots[index].classList.add("dot_selected");
+    bannerImg.src = slides[bannerIndex].imageUrl;
+    selectDots[bannerIndex].classList.add("dot_selected");
 
 }
 
-function slideRight() {
-    slide("right");
-}
-
-function slideLeft() {
-    slide("left");
-}
-
-function autoSlide() {
-    autoSlideInterval = setInterval(() => {
-        slideRight();
+function autoSlide(){
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => {
+        slide("right");
     }, 3000);
 }
 
-arrowRight.addEventListener("click", slideRight);
-arrowLeft.addEventListener("click", slideLeft);
-
-dotsContainer.addEventListener("click", () => {
-    clearInterval(autoSlideInterval);
+document.querySelector(".arrow_right").addEventListener("click", ()=>{ 
+    slide("right");
     autoSlide();
 });
 
-function preloadImages() {
-    for (let i = 0; i < slides.length; i++) {
-        const imageObj = new Image();
-        imageObj.src = slides[i].imageUrl;
-    }
-}
+document.querySelector(".arrow_left").addEventListener("click",  ()=>{ 
+    slide("left");
+    autoSlide();
+});
 
-preloadImages();
-
-img.src = slides[0].imageUrl;
-autoSlide();
-
-displayDots();
 
 /*====================== Current Offers ==================== */
 
@@ -128,4 +89,15 @@ function activate(e) {
   e.target.closest('.prev') && previous(items);
 }
 
-document.addEventListener('click',activate,false);
+document.addEventListener('click',activate);
+
+let currentOffersImages = [
+    "https://s7ap1.scene7.com/is/image/TslDXP/bob-mobile?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/MicrosoftTeams-image%20(11)?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/tiscon-mobile-offer?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/Tiscon_23-anniversary-mobile?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/FEDERAL%20BANK%20WEBSITE%20CREATIVE?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/June10_Banner?fmt=webp",
+    "https://s7ap1.scene7.com/is/image/TslDXP/Summer_Bonanza_Offer_Tiscon?fmt=webp"
+];
+
