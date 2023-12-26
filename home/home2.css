@@ -1,8 +1,11 @@
 .main_home {
+	margin: 2rem 0;
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5rem;
 }
 
 /*=============== Banner ================*/
@@ -99,33 +102,29 @@
 
 /* ============ Current Offers ============*/
 .container {
-	--width: 33%;
-	--gap: 0.5rem;
 	position: relative;
 	margin: auto;
 	width: var(--main-navbar-width);
-	height: 450px;
+	height: 300px;
 	overflow: hidden;
 }
 
 .slider {
 	height: 100%;
-	border: 2px solid rgb(0, 0, 0);
 }
 
-.slider-track {
+.slider_track {
 	position: relative;
-	left: calc(-66% - var(--gap)*2);
+	left: 0;
 	height: inherit;
 	display: flex;
-	gap: var(--gap);
+	gap: 1.5rem;
 	list-style-type: none;
-	border: 1px solid red;
 	transition: transform 0.8s;
 }
 
-.slider-track .item {
-	min-width: var(--width);
+.slider_track .item {
+	min-width: 18%;
 	background-position: center;
 	background-size: cover;
 }
@@ -139,7 +138,7 @@
 	place-items: center;
 	border: none;
 	border-radius: 50%;
-	opacity: 0.5;
+	opacity: 0.8;
 	cursor: pointer;
 	transition: opacity 0.3s;
 }
@@ -157,10 +156,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-	.slider-track {
-		left: calc(-100% - var(--gap) * 2);
-	}
-
+	
 	.slider-track .item {
 		min-width: 50%;
 	}

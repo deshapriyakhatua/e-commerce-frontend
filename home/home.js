@@ -20,7 +20,7 @@ let bannerIndex = 0;
 let sliderInterval;
 autoSlide();
 
-document.querySelectorAll(".dots .dot").forEach((elem,i)=>{
+document.querySelectorAll(".dots .dot").forEach((elem, i) => {
     elem.addEventListener("click", () => {
         const selectDots = document.querySelectorAll(".dots .dot");
         selectDots[bannerIndex].classList.remove("dot_selected");
@@ -32,7 +32,7 @@ document.querySelectorAll(".dots .dot").forEach((elem,i)=>{
 });
 
 function slide(direction) {
-    
+
     const selectDots = document.querySelectorAll(".dots .dot");
     selectDots[bannerIndex].classList.remove("dot_selected");
     if (direction === "right") {
@@ -45,19 +45,19 @@ function slide(direction) {
 
 }
 
-function autoSlide(){
+function autoSlide() {
     clearInterval(sliderInterval);
     sliderInterval = setInterval(() => {
         slide("right");
     }, 3000);
 }
 
-document.querySelector(".arrow_right").addEventListener("click", ()=>{ 
+document.querySelector(".arrow_right").addEventListener("click", () => {
     slide("right");
     autoSlide();
 });
 
-document.querySelector(".arrow_left").addEventListener("click",  ()=>{ 
+document.querySelector(".arrow_left").addEventListener("click", () => {
     slide("left");
     autoSlide();
 });
@@ -65,39 +65,21 @@ document.querySelector(".arrow_left").addEventListener("click",  ()=>{
 
 /*====================== Current Offers ==================== */
 
-const slider = document.querySelector('.slider');
-const track = document.querySelector('.slider-track');
-
-function animate(a,b,items) {
-  a.style.transform += `translateX(${-items[0].offsetWidth}px)`;
-  b.style.transform += `translateX(${items[0].offsetWidth}px)`;
-}
-
-function previous(items) {
-  track.prepend(items[items.length-1]);
-  animate(slider,track,items);
-}
-
-function next(items) {
-  track.append(items[0]);
-  animate(track,slider,items);
+function animate(direction) {
+    let track = document.querySelector('.slider_track');
+    let items = document.querySelectorAll('.item');
+    if (direction === "left") {
+        track.prepend(track.removeChild(items[items.length-1]));
+    } else {
+        track.append(track.removeChild(items[0]));
+    }
 }
 
 function activate(e) {
-  const items = document.querySelectorAll('.item');
-  e.target.closest('.next') && next(items);
-  e.target.closest('.prev') && previous(items);
+    e.target.closest('.next') && animate("right");
+    e.target.closest('.prev') && animate("left");
 }
 
-document.addEventListener('click',activate);
+document.addEventListener('click', activate);
 
-let currentOffersImages = [
-    "https://s7ap1.scene7.com/is/image/TslDXP/bob-mobile?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/MicrosoftTeams-image%20(11)?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/tiscon-mobile-offer?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/Tiscon_23-anniversary-mobile?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/FEDERAL%20BANK%20WEBSITE%20CREATIVE?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/June10_Banner?fmt=webp",
-    "https://s7ap1.scene7.com/is/image/TslDXP/Summer_Bonanza_Offer_Tiscon?fmt=webp"
-];
 
