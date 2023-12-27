@@ -75,11 +75,20 @@ function animate(direction) {
     }
 }
 
-function activate(e) {
-    e.target.closest('.next') && animate("right");
-    e.target.closest('.prev') && animate("left");
+document.querySelector(".btn.prev").addEventListener('click', ()=>{ animate("left"); });
+document.querySelector(".btn.next").addEventListener('click', ()=>{ animate("right"); });
+
+
+/*===================== slider 2 ==================== */
+
+function slide2(direction, distance){
+    console.log(distance)
+    if(direction === "right"){
+        document.querySelector(".slider_parent").scrollBy(distance, 0);
+    }else{
+        document.querySelector(".slider_parent").scrollBy(-distance, 0);
+    }
 }
-
-document.addEventListener('click', activate);
-
-
+let cardWidth = document.querySelector(".slider .card").clientWidth;
+document.querySelector(".slider_btn.prev").addEventListener('click', ()=>{ slide2("left", cardWidth); });
+document.querySelector(".slider_btn.next").addEventListener('click', ()=>{ slide2("right", cardWidth); });

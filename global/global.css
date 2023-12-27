@@ -16,7 +16,7 @@
     --background-color-hover: white;
     --color-hover: black;
     --nav-z-index: 100;
-    --main-navbar-width: 100rem;
+    --main-navbar-width: 1600px;
 }
 
 * {
@@ -38,4 +38,9 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+@media screen and (max-width: 1600px) {
+    :root {
+        --main-navbar-width: 100%;
+    }
 }
