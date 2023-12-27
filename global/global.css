@@ -26,15 +26,16 @@
     padding: 0;
     margin: 0;
     font-family: var(--font-family);
+    -webkit-tap-highlight-color: transparent; /* auto background color on mobile press */
 }
 
 /* ================ stop text selection ============= */
-.stop_selection_child * {
+.stop_text_selection_child * {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
-.stop_selection {
+.stop_text_selection {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;

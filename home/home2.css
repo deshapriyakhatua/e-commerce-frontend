@@ -1,12 +1,17 @@
 .main_home {
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding-bottom: 2rem;
 	width: var(--main-navbar-width);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
-	gap: 5rem;
+	align-items: flex-start;
+	gap: 1rem;
+}
+@media screen and (max-width: 1200px) {
+	.main_home {
+		gap: 1rem;
+	}
 }
 
 /*=============== Banner ================*/
@@ -103,13 +108,14 @@
 
 /* ============ Current Offers ============*/
 .container {
+	display: none;
 	position: relative;
-	margin: auto;
+	border: 1rem solid white;
 	width: 100%;
 	overflow: hidden;
 }
 
-.slider_track {
+.container .slider_track {
 	position: relative;
 	left: 0;
 	width: max-content;
@@ -121,14 +127,14 @@
 	transition: transform 0.8s;
 }
 
-.slider_track .item {
+.container .slider_track .item {
 	width: 300px;
 	aspect-ratio: 1/1;
 	background-position: center;
 	background-size: cover;
 }
 
-.btn {
+.container .btn {
 	position: absolute;
 	top: 50%;
 	width: 2rem;
@@ -142,71 +148,77 @@
 	transition: opacity 0.3s;
 }
 
-.btn:hover {
+.container .btn:hover {
 	opacity: 1;
 }
 
-.btn:nth-of-type(1) {
+.container .btn:nth-of-type(1) {
 	left: 2vmin;
 }
 
-.btn:nth-of-type(2) {
+.container .btn:nth-of-type(2) {
 	right: 2vmin;
 }
 
-.btn span {
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	width: 14px;
-}
-
 @media screen and (max-width: 1600px) {
-	.slider_track .item {
+	.container .slider_track .item {
 		width: 250px;
 	}
 }
 
 @media screen and (max-width: 1050px) {
-	.slider_track .item {
+	.container .slider_track .item {
 		width: 200px;
 	}
 }
 @media screen and (max-width: 780px) {
-	.slider_track .item {
+	.container .slider_track .item {
 		width: 150px;
 	}
 }
-@media screen and (max-width: 550px) {
-	.slider_track .item {
-		width: 100px;
+/*=============== slider heading ============*/
+
+.slider_heading {
+	padding: 3rem 0 1rem 1rem;
+	font-size: 30px;
+	color: #343434;
+}
+@media screen and (max-width: 1200px) {
+	.slider_heading {
+		font-size: 28px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.slider_heading {
+		padding: 2rem 0 1rem 1rem;
+		font-size: 24px;
 	}
 }
 
-/*=================== slider 2 ====================*/
+/*=================== slider 1 ====================*/
 
 .slider_container {
-	display: none;
+	padding: 0 1rem;
 	position: relative;
 	width: 100%;
 }
 
-.slider_parent {
+.slider_container .slider_parent {
 	width: 100%;
 	overflow: scroll;
 	scroll-behavior: smooth;
 }
 
 /* Hide scrollbar */
-.slider_parent::-webkit-scrollbar {
+.slider_container .slider_parent::-webkit-scrollbar {
 	display: none;
 }
-.slider_parent {
+.slider_container .slider_parent {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
 
-.slider {
+.slider_container .slider {
 	list-style-type: none;
 	width: max-content;
 	height: max-content;
@@ -216,14 +228,14 @@
 	flex-wrap: nowrap;
 }
 
-.card {
+.slider_container .slider .card {
 	width: 300px;
-	aspect-ratio: 1/1;
+	aspect-ratio: 4/5;
 	background-position: center;
 	background-size: cover;
 }
 
-.slider_btn {
+.slider_container .slider_btn {
 	position: absolute;
 	top: 50%;
 	width: 2rem;
@@ -237,11 +249,57 @@
 	transition: opacity 0.3s;
 }
 
-.slider_btn:nth-of-type(1) {
-	left: 16px;
-	transform: rotate(180deg);
+.slider_container .slider_btn:nth-of-type(1) {
+	left: 32px;
 }
 
-.slider_btn:nth-of-type(2) {
-	right: 16px;
+.slider_container .slider_btn:nth-of-type(2) {
+	right: 32px;
+}
+
+@media screen and (max-width: 1600px) {
+	.slider_container .slider .card {
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.slider_container .slider .card {
+		width: 200px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.slider_container .slider .card {
+		width: 150px;
+	}
+}
+
+/*=============== slider 2 ===============*/
+
+.slider_container2 .slider .card {
+	aspect-ratio: 2/3;
+}
+
+/*=============== slider 3 ===============*/
+
+.slider_container3 .slider .card {
+	aspect-ratio: 2/3;
+}
+
+/*=============== slider 4 ===============*/
+
+.slider_container4 .slider .card {
+	aspect-ratio: 2/3;
+}
+
+/*=============== slider 5 ===============*/
+
+.slider_container5 .slider .card {
+	aspect-ratio: 4/5;
+}
+
+/*=============== slider 6 ===============*/
+
+.slider_container6 .slider .card {
+	aspect-ratio: 2/3;
 }
