@@ -41,7 +41,7 @@ window.onload = function () {
 
                 <div class="product_button_box">
                     <button class="product_edit_button"> Remove <span class="material-symbols-rounded product_button_icon"> delete </span> </button>
-                    <button class="product_view_button"> Cart <span class="material-symbols-rounded product_button_icon"> shopping_bag </span> </button>
+                    <button class="product_view_button"> Cart <span class="material-symbols-rounded product_button_icon"> shopping_cart </span> </button>
                 </div>
             `;
                 document.querySelector(`.cardBox`).appendChild(card);

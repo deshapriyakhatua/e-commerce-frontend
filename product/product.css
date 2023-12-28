@@ -62,6 +62,9 @@ img{
 .product-content{
     position: relative;
     padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 .product-title{
     font-size: 2rem;
@@ -116,32 +119,29 @@ img{
 .new-price span{
     color: #256eff;
 }
-.product-detail h2{
-    text-transform: capitalize;
-    color: #12263a;
-    padding-bottom: 0.6rem;
+.product-detail h4{
+    color: #282c3f;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .product-detail p{
-    font-size: 0.9rem;
-    padding: 0.3rem;
-    opacity: 0.8;
+    color: #282c3f;
+    line-height: 1.4;
+    font-size: 16px;
+    margin-top: 12px;
+    width: 84%;
 }
-.product-detail ul{
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-.product-detail ul li{
+.product-specifications h4 {
+    color: #282c3f;
+    font-size: 16px;
     margin: 0;
-    list-style: none;
-    background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
-    background-size: 18px;
-    padding-left: 1.7rem;
-    margin: 0.4rem 0;
-    font-weight: 600;
-    opacity: 0.9;
+    font-weight: 700;
+    text-transform: uppercase;
 }
-.product-detail ul li span{
-    font-weight: 400;
+.product-specifications .index-tableContainer{
+    margin-top: 12px;
 }
 .purchase-info{
     margin: 1.5rem 0;
@@ -193,4 +193,182 @@ img{
     .product-content{
         padding-top: 0;
     }
+}
+
+.index-tableContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.index-tableContainer .index-row {
+    position: relative;
+    border-bottom: 1px solid #eaeaec;
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    flex-basis: 40%;
+}
+.index-tableContainer .index-row .index-rowKey {
+    position: relative;
+    color: #7e818c;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.index-tableContainer .index-row .index-rowValue {
+    position: relative;
+    color: #282c3f;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+
+/* rating */
+.index-detailedRatingContainer .index-header {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    padding-bottom: 7px;
+    color: #282c3f;
+}
+.index-detailedRatingContainer .index-margin22 {
+    margin-top: 22px;
+}
+.index-detailedRatingContainer .index-flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.index-detailedRatingContainer .index-flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+.index-detailedRatingContainer .index-separator {
+    margin-left: 34px;
+    height: 96px;
+    border-left: 1.2px solid #eaeaec;
+}
+.index-detailedRatingContainer .index-averageRating {
+    height: 58px;
+    font-size: 48px;
+    color: #282c3f;
+}
+
+.index-detailedRatingContainer .index-flexRow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.index-detailedRatingContainer .index-countDesc {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #282c3f;
+}
+.index-ratingBarContainer {
+    margin-left: 46px;
+    height: 18px;
+}
+.index-ratingBarContainer .index-rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    color: #a9abb3;
+}
+.index-ratingBarContainer progress {
+    border: none;
+    margin-top: 6px;
+    width: 120px;
+    height: 4px;
+    background: none;
+}
+.index-ratingBarContainer progress::-webkit-progress-bar {
+    background: #ddd;
+}  
+.index-ratingBarContainer progress::-webkit-progress-value {  
+  background: #aaa;
+} 
+.index-ratingBarContainer progress[data-rating="5"]::-webkit-progress-value {
+    background: #14958f;
+}
+.index-ratingBarContainer progress[data-rating="4"]::-webkit-progress-value {
+    background: #14958f;
+}
+.index-ratingBarContainer progress[data-rating="3"]::-webkit-progress-value {
+    background: #72bfbc;
+}
+.index-ratingBarContainer progress[data-rating="2"]::-webkit-progress-value {
+    background: #fcb301;
+}
+.index-ratingBarContainer progress[data-rating="1"]::-webkit-progress-value {
+    background: #f16565;
+}
+
+
+.index-ratingBarContainer .index-count {
+    font-size: 12px;
+    color: #282c3f;
+    margin-left: 9px;
+}
+
+.ugc-ugcDescriptionTitle {
+    color: #282c3f;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.answer-wrapper-AnswerWrapper.answer-wrapper-onlyHighlighted {
+    margin: 10px 0;
+}
+.answer-wrapper-AnswerWrapper {
+    margin: 25px 0;
+    font-size: 14px;
+    color: #3e4152;
+}
+.answer-AnswerRow {
+    margin-bottom: 4px;
+}
+.answer-AnswerRow .answer-fill-wrapper {
+    margin-right: 12px;
+    width: 140px;
+    height: 4px;
+    background-color: #eaeaec;
+    position: relative;
+    border-radius: 2px;
+}
+.answer-AnswerRow .answer-caption-wrapper.answer-highlighted {
+    font-weight: 700;
+}
+
+.answer-AnswerRow .answer-caption-wrapper {
+    font-size: 13.5px;
+}
+.answer-AnswerRow .answer-caption-wrapper, .answer-AnswerRow .answer-fill-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+}
+.answer-AnswerRow .answer-fill-wrapper .answer-fill {
+    background-color: #03a685;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 2px;
+}
+.ugc-viewDetails {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff3f6c;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.ugc-ugcContainer.ugc-inPdp {
+    display: block;
+    margin-top: 20px;
 }
