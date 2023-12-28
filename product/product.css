@@ -1,13 +1,4 @@
-.card-wrapper{
-    --main-navbar-width: 100rem;
-}
 
-.card-wrapper *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'DM Sans', sans-serif;
-}
 .card-wrapper{
     max-width: var(--main-navbar-width);
     margin: 2rem auto;
@@ -64,69 +55,58 @@ img{
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 32px;
 }
-.product-title{
-    font-size: 2rem;
-    text-transform: capitalize;
-    font-weight: 700;
-    position: relative;
-    color: #12263a;
-    margin: 1rem 0;
+.product-content > .product_content_child{
+    padding: 0 0 16px 0;
+    border-bottom: 1px solid rgb(228, 227, 227);
 }
-.product-title::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 80px;
-    background: #12263a;
-}
-.product-link{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    color: #256eff;
-    padding: 0 0.3rem;
-    transition: all 0.5s ease;
-}
-.product-link:hover{
-    opacity: 0.9;
-}
-.product-rating{
-    color: #ffc107;
-}
-.product-rating span{
+.product_title .product_heading{
+    color: #282c3f;
+    font-size: 24px;
     font-weight: 600;
+}
+.product_title p{
+    color: #282c3f;
+    font-size: 16px;
+    line-height: 2;
+}
+.product_rating span{
+    font-size: 16px;
+    font-weight: 400;
     color: #252525;
 }
-.product-price{
-    margin: 1rem 0;
-    font-size: 1rem;
+.product_price{
+    color: #a8a8a8;
+    font-size: 20px;
+    line-height: 1.2;
+}
+.product_price .new_price{
+    margin-right: 10px;
+    color: #000;
+    font-size: 20px;
     font-weight: 700;
 }
-.product-price span{
-    font-weight: 400;
-}
-.last-price span{
-    color: #f64749;
+.product_price .mrp_price{
+    margin-right: 5px;
+    color: #c0c0c0;
+    font-size: 20px;
+    font-weight: 500;
     text-decoration: line-through;
 }
-.new-price span{
-    color: #256eff;
+.product_price .off_percent{
+    color: #ff8052;
+    font-size: 20px;
+    font-weight: 700;
 }
-.product-detail h4{
+.content_child_heading{
     color: #282c3f;
     font-size: 16px;
     margin: 0;
     font-weight: 700;
     text-transform: uppercase;
 }
-.product-detail p{
+.product_detail p{
     color: #282c3f;
     line-height: 1.4;
     font-size: 16px;
@@ -140,37 +120,38 @@ img{
     font-weight: 700;
     text-transform: uppercase;
 }
-.product-specifications .index-tableContainer{
+.product-specifications .specification_container{
     margin-top: 12px;
 }
-.purchase-info{
-    margin: 1.5rem 0;
+.purchase_info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
 }
-.purchase-info input,
-.purchase-info .btn{
-    border: 1.5px solid #ddd;
-    border-radius: 25px;
+.purchase_info button{
     text-align: center;
-    padding: 0.45rem 0.8rem;
+    padding: 12px 40px;
+    border: 1px solid rgb(202, 202, 202);
     outline: 0;
-    margin-right: 0.2rem;
-    margin-bottom: 1rem;
-}
-.purchase-info input{
-    width: 60px;
-}
-.purchase-info .btn{
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    color: #3f3f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
     cursor: pointer;
-    color: #fff;
+    transition: all .3s ease-in;
 }
-.purchase-info .btn:first-of-type{
-    background: #256eff;
+.purchase_info span{
+    font-size: 18px;
+    font-weight: 400;
 }
-.purchase-info .btn:last-of-type{
-    background: #f64749;
-}
-.purchase-info .btn:hover{
-    opacity: 0.9;
+.purchase_info button:hover{
+    background: #ff9f21;
 }
 
 
@@ -188,34 +169,34 @@ img{
     .product-imgs{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
     }
     .product-content{
         padding-top: 0;
     }
 }
 
-.index-tableContainer {
+.specification_container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
 }
-.index-tableContainer .index-row {
+.specification_container .specification_row {
     position: relative;
     border-bottom: 1px solid #eaeaec;
     margin: 0 0 12px;
     padding-bottom: 10px;
     flex-basis: 40%;
 }
-.index-tableContainer .index-row .index-rowKey {
+.specification_container .specification_row .specification_row_key {
     position: relative;
     color: #7e818c;
     font-size: 12px;
     line-height: 1;
     margin-bottom: 5px;
 }
-.index-tableContainer .index-row .index-rowValue {
+.specification_container .specification_row .specification_row_value {
     position: relative;
     color: #282c3f;
     font-size: 16px;
@@ -224,7 +205,7 @@ img{
 
 
 /* rating */
-.index-detailedRatingContainer .index-header {
+.detailed_rating_container .index-header {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -232,85 +213,83 @@ img{
     padding-bottom: 7px;
     color: #282c3f;
 }
-.index-detailedRatingContainer .index-margin22 {
+.detailed_rating_container .detailed_rating_parent {
     margin-top: 22px;
-}
-.index-detailedRatingContainer .index-flexRow {
     display: flex;
     flex-direction: row;
 }
-.index-detailedRatingContainer .index-flexColumn {
+.detailed_rating_container .index-flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.detailed_rating_container .average_rating_parent {
     display: flex;
     flex-direction: column;
 }
-.index-detailedRatingContainer .index-separator {
-    margin-left: 34px;
-    height: 96px;
-    border-left: 1.2px solid #eaeaec;
-}
-.index-detailedRatingContainer .index-averageRating {
+.detailed_rating_container .average_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 58px;
     font-size: 48px;
     color: #282c3f;
 }
-
-.index-detailedRatingContainer .index-flexRow {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-}
-.index-detailedRatingContainer .index-countDesc {
+.detailed_rating_container .average_rating_desc {
     margin-top: 12px;
     font-size: 14px;
     font-weight: 400;
     color: #282c3f;
 }
-.index-ratingBarContainer {
+.detailed_rating_container .index_separator {
+    margin-left: 34px;
+    height: 96px;
+    border-left: 1.2px solid #eaeaec;
+}
+.rating_bar_container {
     margin-left: 46px;
     height: 18px;
+    display: flex;
+    flex-direction: row;
 }
-.index-ratingBarContainer .index-rating {
+.rating_bar_container .index-rating {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     font-size: 14px;
     color: #a9abb3;
 }
-.index-ratingBarContainer progress {
+.rating_bar_container progress {
     border: none;
     margin-top: 6px;
     width: 120px;
     height: 4px;
     background: none;
 }
-.index-ratingBarContainer progress::-webkit-progress-bar {
+.rating_bar_container progress::-webkit-progress-bar {
     background: #ddd;
 }  
-.index-ratingBarContainer progress::-webkit-progress-value {  
+.rating_bar_container progress::-webkit-progress-value {  
   background: #aaa;
 } 
-.index-ratingBarContainer progress[data-rating="5"]::-webkit-progress-value {
+.rating_bar_container progress[data-rating="5"]::-webkit-progress-value {
     background: #14958f;
 }
-.index-ratingBarContainer progress[data-rating="4"]::-webkit-progress-value {
+.rating_bar_container progress[data-rating="4"]::-webkit-progress-value {
     background: #14958f;
 }
-.index-ratingBarContainer progress[data-rating="3"]::-webkit-progress-value {
+.rating_bar_container progress[data-rating="3"]::-webkit-progress-value {
     background: #72bfbc;
 }
-.index-ratingBarContainer progress[data-rating="2"]::-webkit-progress-value {
+.rating_bar_container progress[data-rating="2"]::-webkit-progress-value {
     background: #fcb301;
 }
-.index-ratingBarContainer progress[data-rating="1"]::-webkit-progress-value {
+.rating_bar_container progress[data-rating="1"]::-webkit-progress-value {
     background: #f16565;
 }
 
 
-.index-ratingBarContainer .index-count {
+.rating_bar_container .index-count {
     font-size: 12px;
     color: #282c3f;
     margin-left: 9px;
