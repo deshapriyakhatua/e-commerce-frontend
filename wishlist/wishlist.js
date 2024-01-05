@@ -1,7 +1,4 @@
-let preOnloadProduct = window.onload;
-
-window.onload = function () {
-    if (preOnloadProduct) { preOnloadProduct(); }
+window.addEventListener("load", () => {
 
     function createCards(){
         let images2 = [
@@ -56,4 +53,4 @@ window.onload = function () {
 
 
 
-}
+});

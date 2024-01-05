@@ -1,7 +1,4 @@
-let preOnloadSignin = window.onload;
-
-window.onload = function () {
-    if(preOnloadSignin){ preOnloadSignin(); }
+window.addEventListener("load", () => {
 
     const apiUrl = BACKEND_PRE_URL + '/auth/signIn';
 
@@ -47,4 +44,4 @@ window.onload = function () {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
-}
+});

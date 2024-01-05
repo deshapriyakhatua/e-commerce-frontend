@@ -1,7 +1,4 @@
-let preOnloadHome = window.onload;
-
-window.onload = function () {
-    if(preOnloadHome){ preOnloadHome(); }
+window.addEventListener("load", () => {
 
     /* ============== open & close navigation =============== */
     
@@ -23,4 +20,4 @@ window.onload = function () {
 
 
     
-}
+});

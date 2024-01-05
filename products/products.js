@@ -1,7 +1,4 @@
-let preOnloadProduct = window.onload;
-
-window.onload = function () {
-    if (preOnloadProduct) { preOnloadProduct(); }
+window.addEventListener("load", () => {
 
 
 
@@ -143,4 +140,4 @@ window.onload = function () {
         });
     });
 
-}
+});

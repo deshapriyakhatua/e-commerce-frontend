@@ -1,7 +1,4 @@
-let preOnloadSidebar = window.onload;
-
-window.onload = function () {
-    if(preOnloadSidebar){ preOnloadSidebar(); }
+window.addEventListener("load", () => {
 
     document.querySelector(".toggle").addEventListener("click", (e) => {
         console.log("hi")
@@ -14,4 +11,4 @@ window.onload = function () {
         document.querySelector(".close_navigation").style.display = "none";
     });
 
-}
+});

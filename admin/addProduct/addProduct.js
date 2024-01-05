@@ -1,7 +1,4 @@
-let preOnloadAddProduct = window.onload;
-
-window.onload = function () {
-    if(preOnloadAddProduct){ preOnloadAddProduct(); }
+window.addEventListener("load", () => {
 
     /* ============== open & close navigation =============== */
     
@@ -110,4 +107,4 @@ window.onload = function () {
         document.querySelector(".product_desc_table").appendChild(tableRow);
     });
 
-}
+});
