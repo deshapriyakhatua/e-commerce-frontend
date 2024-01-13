@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
-
+        responseMessage.textContent = "";
         const formData = new FormData(contactForm);
 
         const requestOptions = {
