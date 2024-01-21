@@ -96,6 +96,7 @@ window.addEventListener("load", () => {
 
     document.querySelector(".add_new_input_field").addEventListener("click", (e)=>{
         const tableRow = document.createElement("tr");
+        tableRow.className = "specification_row";
         tableRow.innerHTML = `
             <td>
                 <input type="text">
@@ -104,7 +105,7 @@ window.addEventListener("load", () => {
                 <input type="text">
             </td>
         `;
-        document.querySelector(".product_desc_table").appendChild(tableRow);
+        document.querySelector(".product_specification_table").appendChild(tableRow);
     });
 
 });

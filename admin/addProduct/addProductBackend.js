@@ -3,11 +3,20 @@ window.addEventListener("load", () => {
     document.querySelector(".add_product_button").addEventListener("click", (event)=>{
         event.preventDefault();
         console.log("clicked");
+        const title = document.querySelector(".prduct_title").value;
+        const price = document.querySelector(".product_price").value;
+        const deliveryChrgs = document.querySelector(".delivery_chrgs").value;
+        const description = document.querySelector(".product_desc").value;
+        const specification = [...document.querySelectorAll(".specification_row")].reduce((spec, elem, index)=>{
+            return spec += (index===0 ?"" :",") + elem.querySelectorAll("input")[0].value + "|" + elem.querySelectorAll("input")[1].value;
+            
+        }, "");
+        
         const reqBody = {
-            "title":"fkd",
-            "price":550,
-            "description":"alsjlfj kjoffd woii laisl lsii slalia lias s",
-            "specification":"sssf:ssd,allaf:fsfa,adfaf:aas",
+            "title":title,
+            "price":price,
+            "description":description,
+            "specification":specification,
             "category":{ "categoryName":"shirt" }
         };
     
