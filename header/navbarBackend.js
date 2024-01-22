@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     const jwtToken = getCookie("jwtToken");
 
     if (jwtToken.length != 0) {
-        const apiUrl = BACKEND_PRE_URL + '/auth/current_user';
+        const apiUrl = BACKEND_PRE_URL + '/account/current_user';
         const requestOptions = {
             method: 'GET',
             headers: {
@@ -14,11 +14,9 @@ window.addEventListener("load", () => {
 
         fetch(apiUrl, requestOptions)
             .then(response => {
-                return response.ok ? response.text() : response.json();
+                return response.json();
             }).then(data => {
-                if (typeof data == "string") {
-                    disableSignIn(data);
-                }
+                disableSignIn(data.userName);
             }).catch(error => {
             });
 

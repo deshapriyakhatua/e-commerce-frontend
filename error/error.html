@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== Google Fonts & Icon ===============-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,100..700,0..1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        .page_error {
+            padding: 20px 0;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page_error .container {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        @media screen and (min-width: 780px) {
+            .page_error .container {
+                width: 700px;
+            }
+        }
+        .container h3 {
+            font-size: 30px;
+        }
+        .container img {
+            width: 100%;
+        }
+        .go_to_home {
+            text-decoration: none;
+            color: #fff !important;
+            padding: 10px 20px;
+            background: #6f9cff;
+            margin: 20px 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="page_error">
+        <div class="container">
+            <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="" class="image">
+            <h3 class="hedding"> Look like you're not allowed to access ! </h3>
+            <p>The page you are looking for is needed permission to access!</p>
+            <a href="/e-commerce-frontend/home/home.html" class="go_to_home">Go to Home</a>
+        </div>
+    </section>
+</body>
+
+</html>

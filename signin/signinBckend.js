@@ -8,29 +8,38 @@ window.addEventListener("load", () => {
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
         responseMessage.textContent = "";
-        const formData = new FormData(contactForm);
+        responseMessage.textContent = "";
+
+        const email = contactForm.querySelector("#email").value;
+        const password = contactForm.querySelector("#password").value;
+
+        const body = {
+            "email":email,
+            "password":password
+        };
 
         const requestOptions = {
             method: 'POST',
-            body: formData
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
         };
 
         fetch(apiUrl, requestOptions)
             .then(response => {
                 return response.json();
-            }
-            ).then(data => {
+            }).then(data => {
 
                 if (data.error != undefined) {
                     responseMessage.textContent = data.error;
                 } else {
                     setCookie("jwtToken", data.jwtToken, 1);
-                    window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/products/product.html");
+                    window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/home/home.html");
                 }
-                console.log(data);
 
-            }
-            )
+            })
             .catch(error => {
                 responseMessage.textContent = error;
                 console.log("error");
