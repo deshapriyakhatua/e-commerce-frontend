@@ -24,7 +24,8 @@ fetch(apiUrl, requestOptions)
             window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/error/error.html");
         }
     }).catch(error => {
-        console.log(5)
+        window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/error/error.html");
+        console.log(error)
     });
 
 

@@ -100,6 +100,30 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
   }
+
+  .cardBox .load_icon_parent {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes rotating {
+    to{
+        transform: rotate(360deg);
+    }
+  }
+  .cardBox .infinite_rotate {
+    animation: rotating 2s linear infinite;
+  }
+  .cardBox .load_products_icon {
+    width: max-content;
+    font-size: 40px;
+    color: gray;
+  }
+  
   
   .cardBox .card {
     position: relative;

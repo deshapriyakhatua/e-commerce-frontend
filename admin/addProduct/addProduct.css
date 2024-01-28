@@ -144,7 +144,6 @@ body {
   cursor: pointer;
 }
 
-
 /* ================== Product Input List ============== */
 .details {
   position: relative;
@@ -254,41 +253,52 @@ body {
 
 /* =============== Submit button ================ */
 .submit_button_container {
+  margin: 1rem 0 5rem;
   width: 100%;
-  padding: 5rem 0;
-}
-.add_product_button {
-  width: 100%;
-  padding: .5rem 0;
+  height: 35px;
   background-image: linear-gradient(#42A1EC, #0070C9);
   border: 1px solid #0077CC;
   color: #ffffff;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.add_product_button:disabled {
+@keyframes rotating {
+ to{
+      transform: rotate(360deg);
+  }
+}
+
+.uploading_icon.material-symbols-rounded {
+  animation: rotating 2s linear infinite;
+}
+
+.submit_button_container:disabled {
   cursor: default;
   opacity: .3;
 }
 
-.add_product_button:hover {
+.submit_button_container:hover {
   background-image: linear-gradient(#51A9EE, #147BCD);
   border-color: #1482D0;
   text-decoration: none;
 }
 
-.add_product_button:active {
+.submit_button_container:active {
   background-image: linear-gradient(#3D94D9, #0067B9);
   border-color: #006DBC;
   outline: none;
 }
 
-.add_product_button:focus {
+.submit_button_container:focus {
   box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
   outline: none;
 }
+
 
 /* ====================== Responsive Design ========================== */
 

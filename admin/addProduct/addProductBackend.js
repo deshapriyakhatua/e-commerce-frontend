@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
 
     document.querySelector(".add_product_button").addEventListener("click", (event) => {
         event.preventDefault();
-        console.log("clicked");
+        activateUpload();
         const title = document.querySelector(".prduct_title").value;
         const price = document.querySelector(".product_price").value;
         const deliveryChrgs = document.querySelector(".delivery_chrgs").value;
@@ -42,9 +42,9 @@ window.addEventListener("load", () => {
             return spec += (index === 0 ? "" : ",") + elem.querySelectorAll("input")[0].value + "|" + elem.querySelectorAll("input")[1].value;
 
         }, "");
-        var categoryName = document.querySelector(".category_select").value;
-        //const categoryName = categorySelect.options[categorySelect.selectedIndex].text;
-        console.log(categoryName)
+        const categoryName = document.querySelector(".category_select").value;
+        const images = [...document.querySelectorAll(".input_url")].map((elem)=>{return {"url": elem.value}});
+        console.log(images)
 
         const reqBody = {
             "title": title,
@@ -52,10 +52,11 @@ window.addEventListener("load", () => {
             "deliveryChrgs": deliveryChrgs,
             "description": description,
             "specification": specification,
-            "category": { "categoryName": categoryName }
+            "category": { "categoryName": categoryName },
+            "images":images
         };
 
-        const apiUrl = BACKEND_PRE_URL + '/product/product';
+        const apiUrl = BACKEND_PRE_URL + '/seller/product';
         const jwtToken = getCookie("jwtToken");
         const requestOptions = {
             method: 'POST',
@@ -72,21 +73,29 @@ window.addEventListener("load", () => {
                 return response.json();
             }
             ).then(data => {
-
-                if (data.error != undefined) {
-
-                } else {
-
-                }
+                activateUploaded(true);
                 console.log(data);
-
             }
             )
             .catch(error => {
-
+                activateUploaded(false);
                 console.log(error);
             });
     });
 
+    function activateUpload(){
+        let button = document.querySelector("#add_product_button");
+        button.className = "material-symbols-rounded uploading_icon";
+        button.textContent = "progress_activity";
+    }
+    function activateUploaded(bool){
+        let button = document.querySelector("#add_product_button");
+        button.className = "material-symbols-rounded uploaded_icon";
+        button.textContent = bool ?"done" :"cloud_off";
+        setTimeout(()=>{
+            button.className = "add_product_button";
+            button.textContent = "Add Product";
+        },10000);
+    }
 
 });
