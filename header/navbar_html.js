@@ -25,7 +25,7 @@ document.write(`
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="/e-commerce-frontend/products/products.html" class="dropdown__link">Washing Machines & Dryers</a>
+                                                <a href="/e-commerce-frontend/products/products.html?category=t-shirt" class="dropdown__link">Washing Machines & Dryers</a>
                                             </li>
                                             <li>
                                                 <a href="#" class="dropdown__link">Air Conditioner</a>
@@ -337,10 +337,10 @@ document.write(`
                             <div class="main_nav_account_container">
                                 <a href="/e-commerce-frontend/signin/signin.html" id="navbar_account_dropdown_login" class="dropList">LOGIN/SIGNUP</a>
                                 <a href="#" class="dropList" id="navbar_account_dropdown_account"></a>
-                                <a href="#" class="dropList">Gift Cards</a>
+                                <a href="#" class="dropList">Orders</a>
                                 <a href="#" class="dropList">Coupons</a>
                                 <a href="#" class="dropList">Saved Address</a>
-                                <a href="#" class="dropList">Saved Cards</a>
+                                <a href="/e-commerce-frontend/admin/home/home.html" class="dropList">Admin</a>
                             </div>
                         </div>
                     </div>

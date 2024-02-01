@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
                 if (data.error != undefined) {
                     responseMessage.textContent = data.error;
                 } else {
-                    setCookie("jwtToken", data.jwtToken, 1);
+                    setCookie("jwtToken", data.jwtToken, 1*24);
                     window.location.replace(FRONTEND_PRE_URL + "/e-commerce-frontend/home/home.html");
                 }
 
@@ -46,12 +46,5 @@ window.addEventListener("load", () => {
                 console.log("error");
             });
     });
-
-    function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
 
 });

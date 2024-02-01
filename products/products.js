@@ -140,4 +140,13 @@ window.addEventListener("load", () => {
         });
     });
 
+    /* ==================== WishList button toggle ======================= */
+
+    document.querySelectorAll(".wishlist__icon").forEach((elem)=>{
+        elem.addEventListener("click", (event)=>{
+            let isSelected = true;
+            event.target.style.fontVariationSettings = isSelected ?"'FILL' 1" :"'FILL' 0";
+        });
+    })
+
 });

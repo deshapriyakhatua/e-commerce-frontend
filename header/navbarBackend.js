@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     const jwtToken = getCookie("jwtToken");
 
     if (jwtToken.length != 0) {
-        const apiUrl = BACKEND_PRE_URL + '/account/current_user';
+        const apiUrl = BACKEND_PRE_URL + '/user/current_user';
         const requestOptions = {
             method: 'GET',
             headers: {
